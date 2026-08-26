@@ -2,22 +2,35 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — Soporte</title>
 <meta name="description" content="Ayuda con BeatSleep. Escrito por una persona, contestado por una persona.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="BeatSleep — Soporte">
+<meta property="og:description" content="Ayuda con BeatSleep. Escrito por una persona, contestado por una persona.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/mark.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/icon-180.png">
 <link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="alternate" hreflang="en" href="../support.html">
 <link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="wrap">
 <header class="mast">
-  <a class="home" href="./"><img src="../assets/mark.png" alt="">BeatSleep</a>
-  <nav class="lang"><a href="../support.html">English</a></nav>
+  <a class="home" href="../"><img src="../assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <nav>
+    <a href="../privacy.html">Privacidad</a>
+    <a href="../support.html" aria-current="page">Soporte</a>
+    <a href="../support.html">English</a>
+  </nav>
 </header>
 <main>
 <h1>Soporte</h1>
-<p class="lede">BeatSleep lo hace una sola persona, y esa misma persona contesta el correo. Escribe en español o en inglés.</p>
+<p class="lede" style="margin-left:0">BeatSleep lo hace una sola persona, y esa misma persona contesta el correo. Escribe en español o en inglés.</p>
 
 <p class="mail"><a href="mailto:beatsleepcorp@gmail.com">beatsleepcorp@gmail.com</a></p>
 
@@ -42,12 +55,16 @@
 <p>Escribe a la dirección de arriba. Dime qué reloj y qué versión de iOS usas, y qué esperabas que pasara. También puedes proponer una mejora desde dentro de la app, en Protocolo.</p>
 </main>
 <footer>
-  <a href="./">Inicio</a>
-  <a href="privacy.html">Privacidad</a>
-  <a href="support.html">Soporte</a>
-  <a href="terms.html">Términos</a>
-  <span class="spacer"></span>
-  <span>© 2026 Javier Torres Rubio</span>
+  <div class="footer-inner">
+    <a href="../">Inicio</a>
+    <a href="../privacy.html">Privacidad</a>
+    <a href="../support.html">Soporte</a>
+    <a href="../terms.html">Términos</a>
+    <span class="spacer"></span>
+    <span>&copy; 2026 Javier Torres Rubio</span>
+  </div>
 </footer>
+</div>
+<script src="../app.js" defer></script>
 </body>
 </html>

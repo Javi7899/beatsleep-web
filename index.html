@@ -2,51 +2,101 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — your pulse follows the tap</title>
 <meta name="description" content="BeatSleep reads your heart on your Apple Watch and taps just under it. Your pulse follows the tap down, and you fall asleep.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="BeatSleep — your pulse follows the tap">
+<meta property="og:description" content="BeatSleep reads your heart on your Apple Watch and taps just under it. Your pulse follows the tap down, and you fall asleep.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/mark.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="alternate" hreflang="es" href="es/">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="wrap">
 <header class="mast">
-  <a class="home" href=""><img src="assets/mark.png" alt="">BeatSleep</a>
-  <nav class="lang"><a href="es/">Español</a></nav>
+  <a class="home" href=""><img src="assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <nav>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="es/">Español</a>
+  </nav>
 </header>
-<div class="orb-wrap"><div class="orb"></div></div>
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="instrument">
+      <div class="orb"></div>
+      <svg viewBox="0 0 480 300" role="img" aria-label="Two lines descending together: the wearer's heart rate, and the taptic cadence held just below it.">
+        <path class="trace pulse" d="M 20 74 C 58 70, 68 92, 98 84 C 128 76, 138 106, 168 102
+                                     C 198 98, 208 128, 238 126 C 268 124, 278 154, 308 152
+                                     C 338 150, 348 178, 378 180 C 408 182, 432 194, 460 198"/>
+        <path class="trace tap" d="M 20 106 C 92 104, 122 132, 170 136 C 222 140, 252 166, 310 180
+                                   C 372 195, 412 210, 460 220"/>
+        <text class="trace-label a" x="20" y="56">your pulse</text>
+        <text class="trace-label b" x="20" y="132">the tap</text>
+      </svg>
+    </div>
+
+    <h1>Your pulse follows the tap.</h1>
+    <p class="lede">BeatSleep reads your heart on your Apple&nbsp;Watch, then taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep.</p>
+  </div>
+</section>
+
 <main>
-<h1>Your pulse follows the tap.</h1>
-<p class="lede">BeatSleep reads your heart on your Apple&nbsp;Watch, then taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep.</p>
+  <div class="claims rise">
+    <div class="claim"><span class="big">No sound</span><p>Not to start, not to lead, not to wake you.</p></div>
+    <div class="claim"><span class="big">No screen</span><p>It fades away once you no longer need it.</p></div>
+    <div class="claim"><span class="big">No account</span><p>Nothing leaves your devices. There is no server.</p></div>
+  </div>
 
-<p>There is no sound. There is nothing to watch. The screen exists only to prove it is working, and it fades away once you no longer need it.</p>
+  <h2 class="rise">How a night goes</h2>
+  <ul class="phases rise">
+    <li class="phase"><span class="name">Listening</span><p>For the first 45 seconds nothing taps. BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</p></li>
+    <li class="phase"><span class="name">Entraining</span><p>The cadence anchors to that rate and sheds four beats every ten minutes, staying just under your pulse — far enough to lead, close enough to be followed.</p></li>
+    <li class="phase"><span class="name">Holding</span><p>Once you reach your floor the text decays away and the screen dims to a single slow orb. Nothing asks for your attention again.</p></li>
+    <li class="phase"><span class="name">Rising</span><p>Inside your wake window the cadence inverts and quickens. You wake to a quickening, not to an alarm.</p></li>
+  </ul>
 
-<h2>How a night goes</h2>
-<ul class="phases">
-  <li><span class="name">Listening</span> For the first 45 seconds nothing taps. BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</li>
-  <li><span class="name">Entraining</span> The cadence anchors to that rate and sheds four beats every ten minutes, staying just under your pulse — far enough to lead, close enough to be followed.</li>
-  <li><span class="name">Holding</span> Once you reach your floor the text decays away and the screen dims to a single slow orb. Nothing asks for your attention again.</li>
-  <li><span class="name">Rising</span> Inside your wake window the cadence inverts and quickens. You wake to a quickening, not to an alarm. No sound is ever played.</li>
-</ul>
+  <h2 class="rise">It follows you, not a schedule</h2>
+  <div class="rise">
+    <p>If you turn over, if a noise wakes you, if your pulse climbs — BeatSleep stops pulling and re-anchors to your real heartbeat within a minute. Restlessness is followed, not fought.</p>
+    <p>Your floor is not a number you guess at. After three full nights BeatSleep derives it from your own overnight minimum, one beat at a time, and never leads you below it.</p>
+  </div>
 
-<h2>It follows you, not a schedule</h2>
-<p>If you turn over, if a noise wakes you, if your pulse climbs — BeatSleep stops pulling and re-anchors to your real heartbeat within a minute. Restlessness is followed, not fought.</p>
-<p>Your floor is not a number you guess at. After three full nights BeatSleep derives it from your own overnight minimum, one beat at a time, and never leads you below it.</p>
+  <h2 class="rise">In the morning</h2>
+  <div class="rise">
+    <p>One screen. How long it took you to go under, against <strong>your own</strong> median — not against anyone else's. The moment your pulse and the cadence converged. How far you were drawn down.</p>
+    <p>No score. No streak. No ring to close.</p>
+  </div>
 
-<h2>Nothing leaves your devices</h2>
-<p>BeatSleep has no account and no server. Your heart rate is read from HealthKit on the watch, the summary is computed there overnight, and it travels to your iPhone over Apple's encrypted device link. Optional iCloud sync writes to <strong>your own</strong> private iCloud database, in encrypted fields — never to us, because there is no us to send it to.</p>
-<p><a href="privacy.html">Read the privacy policy</a></p>
+  <h2 class="rise">Nothing leaves your devices</h2>
+  <div class="rise">
+    <p>BeatSleep has no account and no server. Your heart rate is read from HealthKit on the watch, the summary is computed there overnight, and it travels to your iPhone over Apple's encrypted device link. Optional iCloud sync writes to <strong>your own</strong> private iCloud database, in encrypted fields — never to us, because there is no us to send it to.</p>
+    <p><a href="privacy.html">Read the privacy policy</a></p>
+  </div>
 
-<p class="note">Requires an Apple&nbsp;Watch. BeatSleep is not a medical device. It does not diagnose, treat, cure or prevent any condition. If you have a sleep disorder or a heart condition, talk to a doctor rather than to an app.</p>
+  <p class="note">Requires an Apple&nbsp;Watch. BeatSleep is not a medical device. It does not diagnose, treat, cure or prevent any condition. If you have a sleep disorder or a heart condition, talk to a doctor rather than to an app.</p>
 </main>
+
 <footer>
-  <a href="">Home</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="support.html">Support</a>
-  <a href="terms.html">Terms</a>
-  <span class="spacer"></span>
-  <span>© 2026 Javier Torres Rubio</span>
+  <div class="footer-inner">
+    <a href="">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms</a>
+    <span class="spacer"></span>
+    <span>&copy; 2026 Javier Torres Rubio</span>
+  </div>
 </footer>
+</div>
+<script src="app.js" defer></script>
 </body>
 </html>

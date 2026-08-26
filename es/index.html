@@ -2,51 +2,101 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — tu pulso sigue al toque</title>
 <meta name="description" content="BeatSleep lee tu corazón en el Apple Watch y toca justo por debajo. Tu pulso sigue al toque hacia abajo, y te duermes.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="BeatSleep — tu pulso sigue al toque">
+<meta property="og:description" content="BeatSleep lee tu corazón en el Apple Watch y toca justo por debajo. Tu pulso sigue al toque hacia abajo, y te duermes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/mark.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="../assets/icon-180.png">
 <link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="alternate" hreflang="en" href="../">
 <link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="wrap">
 <header class="mast">
-  <a class="home" href="./"><img src="../assets/mark.png" alt="">BeatSleep</a>
-  <nav class="lang"><a href="../">English</a></nav>
+  <a class="home" href="../"><img src="../assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <nav>
+    <a href="../privacy.html">Privacidad</a>
+    <a href="../support.html">Soporte</a>
+    <a href="../">English</a>
+  </nav>
 </header>
-<div class="orb-wrap"><div class="orb"></div></div>
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="instrument">
+      <div class="orb"></div>
+      <svg viewBox="0 0 480 300" role="img" aria-label="Dos líneas que descienden juntas: la frecuencia cardiaca de quien lo lleva, y la cadencia háptica sostenida justo por debajo.">
+        <path class="trace pulse" d="M 20 74 C 58 70, 68 92, 98 84 C 128 76, 138 106, 168 102
+                                     C 198 98, 208 128, 238 126 C 268 124, 278 154, 308 152
+                                     C 338 150, 348 178, 378 180 C 408 182, 432 194, 460 198"/>
+        <path class="trace tap" d="M 20 106 C 92 104, 122 132, 170 136 C 222 140, 252 166, 310 180
+                                   C 372 195, 412 210, 460 220"/>
+        <text class="trace-label a" x="20" y="56">tu pulso</text>
+        <text class="trace-label b" x="20" y="132">el toque</text>
+      </svg>
+    </div>
+
+    <h1>Tu pulso sigue al toque.</h1>
+    <p class="lede">BeatSleep lee tu corazón en el Apple&nbsp;Watch y después toca tu muñeca justo por debajo de tu propia frecuencia. Tu pulso sigue al toque hacia abajo, y te duermes.</p>
+  </div>
+</section>
+
 <main>
-<h1>Tu pulso sigue al toque.</h1>
-<p class="lede">BeatSleep lee tu corazón en el Apple&nbsp;Watch y después toca tu muñeca justo por debajo de tu propia frecuencia. Tu pulso sigue al toque hacia abajo, y te duermes.</p>
+  <div class="claims rise">
+    <div class="claim"><span class="big">Sin sonido</span><p>Ni al empezar, ni al guiar, ni al despertarte.</p></div>
+    <div class="claim"><span class="big">Sin pantalla</span><p>Se apaga sola en cuanto deja de hacerte falta.</p></div>
+    <div class="claim"><span class="big">Sin cuenta</span><p>Nada sale de tus dispositivos. No hay servidor.</p></div>
+  </div>
 
-<p>No hay sonido. No hay nada que mirar. La pantalla existe solo para demostrar que está funcionando, y se apaga sola en cuanto deja de hacerte falta.</p>
+  <h2 class="rise">Cómo transcurre una noche</h2>
+  <ul class="phases rise">
+    <li class="phase"><span class="name">Escucha</span><p>Durante los primeros 45 segundos no toca nada. BeatSleep mide la frecuencia a la que estás descansando de verdad, porque el descenso tiene que empezar donde estás tú.</p></li>
+    <li class="phase"><span class="name">Arrastre</span><p>La cadencia se ancla a esa frecuencia y suelta cuatro latidos cada diez minutos, manteniéndose justo por debajo de tu pulso: lo bastante lejos para guiar, lo bastante cerca para que la sigas.</p></li>
+    <li class="phase"><span class="name">Sostén</span><p>Al alcanzar tu suelo, el texto se desvanece y la pantalla se reduce a un único orbe lento. Nada vuelve a pedirte atención.</p></li>
+    <li class="phase"><span class="name">Ascenso</span><p>Dentro de tu ventana de despertar la cadencia se invierte y acelera. Despiertas con una aceleración, no con una alarma.</p></li>
+  </ul>
 
-<h2>Cómo transcurre una noche</h2>
-<ul class="phases">
-  <li><span class="name">Escucha</span> Durante los primeros 45 segundos no toca nada. BeatSleep mide la frecuencia a la que estás descansando de verdad, porque el descenso tiene que empezar donde estás tú.</li>
-  <li><span class="name">Arrastre</span> La cadencia se ancla a esa frecuencia y suelta cuatro latidos cada diez minutos, manteniéndose justo por debajo de tu pulso: lo bastante lejos para guiar, lo bastante cerca para que la sigas.</li>
-  <li><span class="name">Sostén</span> Al alcanzar tu suelo, el texto se desvanece y la pantalla se reduce a un único orbe lento. Nada vuelve a pedirte atención.</li>
-  <li><span class="name">Ascenso</span> Dentro de tu ventana de despertar la cadencia se invierte y acelera. Despiertas con una aceleración, no con una alarma. Nunca suena nada.</li>
-</ul>
+  <h2 class="rise">Te sigue a ti, no a un horario</h2>
+  <div class="rise">
+    <p>Si te das la vuelta, si un ruido te despierta, si tu pulso sube, BeatSleep deja de tirar y vuelve a anclarse a tu latido real en menos de un minuto. La inquietud se sigue, no se combate.</p>
+    <p>Tu suelo no es un número que adivinas. Tras tres noches completas, BeatSleep lo deduce de tu propio mínimo nocturno, un latido cada vez, y nunca te lleva por debajo.</p>
+  </div>
 
-<h2>Te sigue a ti, no a un horario</h2>
-<p>Si te das la vuelta, si un ruido te despierta, si tu pulso sube, BeatSleep deja de tirar y vuelve a anclarse a tu latido real en menos de un minuto. La inquietud se sigue, no se combate.</p>
-<p>Tu suelo no es un número que adivinas. Tras tres noches completas, BeatSleep lo deduce de tu propio mínimo nocturno, un latido cada vez, y nunca te lleva por debajo.</p>
+  <h2 class="rise">Por la mañana</h2>
+  <div class="rise">
+    <p>Una sola pantalla. Cuánto tardaste en caer, comparado con <strong>tu propia</strong> mediana, no con la de nadie más. El momento en que tu pulso y la cadencia convergieron. Cuánto te bajó.</p>
+    <p>Sin puntuación. Sin rachas. Sin anillos que cerrar.</p>
+  </div>
 
-<h2>Nada sale de tus dispositivos</h2>
-<p>BeatSleep no tiene cuenta ni servidor. Tu frecuencia cardiaca se lee de HealthKit en el reloj, el resumen se calcula ahí durante la noche y viaja a tu iPhone por el enlace cifrado entre dispositivos de Apple. La sincronización opcional por iCloud escribe en <strong>tu propia</strong> base de datos privada de iCloud, en campos cifrados; nunca hacia nosotros, porque no hay un «nosotros» al que enviarlo.</p>
-<p><a href="privacy.html">Leer la política de privacidad</a></p>
+  <h2 class="rise">Nada sale de tus dispositivos</h2>
+  <div class="rise">
+    <p>BeatSleep no tiene cuenta ni servidor. Tu frecuencia cardiaca se lee de HealthKit en el reloj, el resumen se calcula ahí durante la noche y viaja a tu iPhone por el enlace cifrado entre dispositivos de Apple. La sincronización opcional por iCloud escribe en <strong>tu propia</strong> base de datos privada de iCloud, en campos cifrados; nunca hacia nosotros, porque no hay un «nosotros» al que enviarlo.</p>
+    <p><a href="privacy.html">Leer la política de privacidad</a></p>
+  </div>
 
-<p class="note">Requiere un Apple&nbsp;Watch. BeatSleep no es un producto sanitario. No diagnostica, trata, cura ni previene ninguna afección. Si tienes un trastorno del sueño o una afección cardiaca, habla con un médico y no con una aplicación.</p>
+  <p class="note">Requiere un Apple&nbsp;Watch. BeatSleep no es un producto sanitario. No diagnostica, trata, cura ni previene ninguna afección. Si tienes un trastorno del sueño o una afección cardiaca, habla con un médico y no con una aplicación.</p>
 </main>
+
 <footer>
-  <a href="./">Inicio</a>
-  <a href="privacy.html">Privacidad</a>
-  <a href="support.html">Soporte</a>
-  <a href="terms.html">Términos</a>
-  <span class="spacer"></span>
-  <span>© 2026 Javier Torres Rubio</span>
+  <div class="footer-inner">
+    <a href="../">Inicio</a>
+    <a href="../privacy.html">Privacidad</a>
+    <a href="../support.html">Soporte</a>
+    <a href="../terms.html">Términos</a>
+    <span class="spacer"></span>
+    <span>&copy; 2026 Javier Torres Rubio</span>
+  </div>
 </footer>
+</div>
+<script src="../app.js" defer></script>
 </body>
 </html>

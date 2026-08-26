@@ -2,52 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — Support</title>
 <meta name="description" content="Get help with BeatSleep. Written by a person, answered by a person.">
 <meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="BeatSleep — Support">
+<meta property="og:description" content="Get help with BeatSleep. Written by a person, answered by a person.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/mark.png">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="alternate" hreflang="es" href="es/support.html">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="wrap">
 <header class="mast">
-  <a class="home" href=""><img src="assets/mark.png" alt="">BeatSleep</a>
-  <nav class="lang"><a href="es/support.html">Español</a></nav>
+  <a class="home" href=""><img src="assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <nav>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html" aria-current="page">Support</a>
+    <a href="es/support.html">Español</a>
+  </nav>
 </header>
+
 <main>
-<h1>Support</h1>
-<p class="lede">One person makes BeatSleep, and that same person answers the email. Write in English or Spanish.</p>
+  <h1>Support</h1>
+  <p class="lede" style="margin-left:0">One person makes BeatSleep, and that same person answers the email. Write in English or Spanish.</p>
+  <p class="mail"><a href="mailto:beatsleepcorp@gmail.com">beatsleepcorp@gmail.com</a></p>
 
-<p class="mail"><a href="mailto:beatsleepcorp@gmail.com">beatsleepcorp@gmail.com</a></p>
+  <h2>Common questions</h2>
 
-<h2>Common questions</h2>
+  <h3>I don't feel any taps.</h3>
+  <p>The first 45 seconds are silent on purpose — BeatSleep is measuring your resting rate before it leads. If nothing happens after that, check that Taptic strength is not on Faint (Protocol › Taptic strength), and that your band is snug: a loose band both dulls the tap and stops the heart-rate sensor reading.</p>
 
-<h3>I don't feel any taps.</h3>
-<p>The first 45 seconds are silent on purpose — BeatSleep is measuring your resting rate before it leads. If nothing happens after that, check that Taptic strength is not on Faint (Protocol › Taptic strength), and that your band is snug: a loose band both dulls the tap and stops the heart-rate sensor reading.</p>
+  <h3>It says it can't read my heart rate.</h3>
+  <p>BeatSleep needs the Health permission for heart rate. Grant it in Settings › Privacy &amp; Security › Health › BeatSleep on your iPhone, or in the Watch app. Without it a session cannot start — the whole app is built on your live pulse.</p>
 
-<h3>It says it can't read my heart rate.</h3>
-<p>BeatSleep needs the Health permission for heart rate. Grant it in Settings › Privacy &amp; Security › Health › BeatSleep on your iPhone, or in the Watch app. Without it, a session cannot start — the whole app is built on your live pulse.</p>
+  <h3>Does it make a sound?</h3>
+  <p>Never. Not to start, not to lead, not to wake you. Waking is a quickening of the taps, not an alarm.</p>
 
-<h3>Does it make a sound?</h3>
-<p>Never. Not to start, not to lead, not to wake you. Waking is a quickening of the taps, not an alarm.</p>
+  <h3>How do I get my data out?</h3>
+  <p>Protocol › Export my nights writes everything BeatSleep holds to a JSON file you can keep or inspect. Protocol › Erase everything deletes it permanently. Deleting the app also deletes everything it stored.</p>
 
-<h3>How do I get my data out?</h3>
-<p>Protocol › Export my nights writes everything BeatSleep holds to a JSON file you can keep or inspect. Protocol › Erase everything deletes it permanently. Deleting the app also deletes everything it stored.</p>
+  <h3>Managing your subscription</h3>
+  <p>BeatSleep Pro is billed through your Apple Account. To view, change or cancel it, open Settings on your iPhone, tap your name, then Subscriptions. Cancelling there stops the renewal; Pro stays active until the end of the period you already paid for. Refunds are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> — not by us, because we never take the payment.</p>
 
-<h3>Managing your subscription</h3>
-<p>BeatSleep Pro is billed through your Apple Account. To view, change or cancel it, open Settings on your iPhone, tap your name, then Subscriptions. Cancelling there stops the renewal; Pro stays active until the end of the period you already paid for. Refunds are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> — not by us, because we never take the payment.</p>
-
-<h3>Something is wrong, or something is missing.</h3>
-<p>Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol.</p>
+  <h3>Something is wrong, or something is missing.</h3>
+  <p>Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol.</p>
 </main>
+
 <footer>
-  <a href="">Home</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="support.html">Support</a>
-  <a href="terms.html">Terms</a>
-  <span class="spacer"></span>
-  <span>© 2026 Javier Torres Rubio</span>
+  <div class="footer-inner">
+    <a href="">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="terms.html">Terms</a>
+    <span class="spacer"></span>
+    <span>&copy; 2026 Javier Torres Rubio</span>
+  </div>
 </footer>
+</div>
+<script src="app.js" defer></script>
 </body>
 </html>
