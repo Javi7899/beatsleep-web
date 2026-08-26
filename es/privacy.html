@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeatSleep — Política de privacidad</title>
+<meta name="description" content="BeatSleep no recopila tus datos. No hay cuenta, ni servidor, ni analítica.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="../assets/icon-180.png">
+<link rel="apple-touch-icon" href="../assets/icon-180.png">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="mast">
+  <a class="home" href="./"><img src="../assets/mark.png" alt="">BeatSleep</a>
+  <nav class="lang"><a href="../privacy.html">English</a></nav>
+</header>
+<main>
+<h1>Política de privacidad</h1>
+<p class="updated">Última actualización: 26 de agosto de 2026</p>
+
+<p>BeatSleep no recopila tus datos. Esto no es una promesa sobre lo bien que se custodia una base de datos: no hay base de datos, y no hay servidor. Nada de lo que registras se envía nunca al desarrollador, y no existe ningún mecanismo por el que pudiera hacerlo.</p>
+
+<h2>Qué lee BeatSleep</h2>
+<p>Todo lo siguiente se lee de HealthKit, en tu propio dispositivo, y se usa únicamente para ejecutar la sesión y para describírtela después:</p>
+<ul>
+  <li><strong>Frecuencia cardiaca</strong>, mientras hay una sesión en marcha, para decidir la cadencia háptica y calcular el resumen que ves por la mañana.</li>
+  <li><strong>Fases del sueño, variabilidad de la frecuencia cardiaca, frecuencia respiratoria y temperatura de la muñeca</strong>, una vez terminada la noche, para resumir lo que pasó.</li>
+</ul>
+<p>Los datos de salud no se usan nunca para publicidad, no se venden, no se comparten y no se destinan a ningún fin distinto de mostrarte tu propia noche dentro de la app.</p>
+
+<h2>Qué escribe BeatSleep</h2>
+<ul>
+  <li><strong>Minutos de atención plena</strong>, en tu propia app Salud, correspondientes al tramo de la noche en que fuiste guiado. No se escribe nada más en Salud.</li>
+</ul>
+
+<h2>Dónde se guarda</h2>
+<p>Cada noche que BeatSleep registra se guarda en un archivo dentro del contenedor de la propia app en tu dispositivo, protegido por el cifrado de archivos de iOS mientras el dispositivo está bloqueado. Los resúmenes viajan entre tu Apple&nbsp;Watch y tu iPhone por el enlace cifrado de dispositivo a dispositivo de Apple, que nunca sale de la pareja.</p>
+
+<h2>Sincronización con iCloud — opcional y desactivada por defecto</h2>
+<p>BeatSleep puede llevar tu historial entre tus propios dispositivos. Está <strong>apagada hasta que tú la enciendes</strong>, y no es nuestra red:</p>
+<ul>
+  <li>Los registros se escriben en la <strong>base de datos privada de tu propia cuenta de iCloud</strong>, mediante CloudKit.</li>
+  <li>Todos los campos se escriben con los valores cifrados de CloudKit, de modo que el contenido se cifra con una clave custodiada para ti y nunca para nosotros.</li>
+  <li>El desarrollador no tiene sistema de cuentas, ni servidor, ni acceso de ningún tipo a esa base de datos. No podemos leerla, ni listarla, ni saber que existe.</li>
+  <li>Apagar el interruptor <strong>borra</strong> esos registros de iCloud, en lugar de limitarse a ignorarlos.</li>
+</ul>
+<p>El tratamiento que Apple hace de tus datos de iCloud se rige por la <a href="https://www.apple.com/legal/privacy/">política de privacidad de Apple</a>.</p>
+
+<h2>Suscripciones</h2>
+<p>BeatSleep Pro lo vende y lo cobra Apple a través de tu cuenta de Apple. La app le pregunta a StoreKit si esta cuenta de Apple tiene derecho a Pro, y esa respuesta se queda en el dispositivo. Nunca vemos tu nombre, tu correo, tu método de pago ni tu cuenta de Apple. Apple facilita al desarrollador únicamente informes de ventas anónimos y agregados, que no permiten identificarte.</p>
+
+<h2>Qué no se hace</h2>
+<ul>
+  <li>Sin cuenta, sin inicio de sesión, sin dirección de correo.</li>
+  <li>Sin analítica, sin SDK de informes de fallos, sin identificadores publicitarios, sin seguimiento de ningún tipo.</li>
+  <li>Sin SDK de terceros.</li>
+  <li>Ningún dato se vende ni se comparte con nadie.</li>
+</ul>
+
+<h2>Tu control</h2>
+<ul>
+  <li><strong>Exportar</strong> — «Exportar mis noches» escribe todo lo que BeatSleep guarda en un archivo JSON que puedes conservar o inspeccionar.</li>
+  <li><strong>Borrar</strong> — «Borrarlo todo» elimina de forma permanente todas las noches registradas, en el dispositivo y en iCloud.</li>
+  <li><strong>Revocar</strong> — Puedes retirar los permisos de Salud cuando quieras en Ajustes › Privacidad y seguridad › Salud › BeatSleep.</li>
+  <li><strong>Borrar la app</strong> — Al borrar BeatSleep se borra todo lo que guardó. Los minutos de atención plena ya escritos en Salud pertenecen a tu app Salud y se eliminan desde ahí, si así lo quieres.</li>
+</ul>
+<p>Como ningún dato personal llega jamás al desarrollador, no hay nada que podamos entregar, rectificar o suprimir a petición conforme al RGPD: los controles de exportar y borrar de arriba están enteramente en tus manos, y son completos.</p>
+
+<h2>Menores</h2>
+<p>BeatSleep no está dirigida a menores y no recopila nada de nadie.</p>
+
+<h2>Cambios</h2>
+<p>Si esta política cambia, la fecha de arriba cambia con ella, y las versiones anteriores quedan en el historial público del repositorio desde el que se sirve esta página.</p>
+
+<h2>Contacto</h2>
+<p class="mail"><a href="mailto:beatsleepcorp@gmail.com">beatsleepcorp@gmail.com</a></p>
+</main>
+<footer>
+  <a href="./">Inicio</a>
+  <a href="privacy.html">Privacidad</a>
+  <a href="support.html">Soporte</a>
+  <a href="terms.html">Términos</a>
+  <span class="spacer"></span>
+  <span>© 2026 Javier Torres Rubio</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* BeatSleep — the same numbers as the app.
+   Ground is black, no text above 90% white, accent is OKLCH hue 282. */
+
+:root {
+  --ground: #000;
+  --primary: rgba(255, 255, 255, 0.90);
+  --secondary: rgba(255, 255, 255, 0.52);
+  --tertiary: rgba(255, 255, 255, 0.34);
+  --faint: rgba(255, 255, 255, 0.12);
+  --accent: oklch(0.74 0.10 282);
+  --accent-dim: oklch(0.62 0.09 282);
+  --measure: 34rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--primary);
+  font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 0 24px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main { width: 100%; max-width: var(--measure); }
+
+/* ---- masthead ---- */
+
+header.mast {
+  width: 100%;
+  max-width: var(--measure);
+  padding: 40px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+header.mast a.home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+header.mast img { width: 28px; height: 28px; border-radius: 7px; }
+
+nav.lang { font-size: 14px; color: var(--tertiary); }
+nav.lang a { color: var(--secondary); }
+nav.lang a[aria-current] { color: var(--primary); }
+
+/* ---- the orb, the same object as the app's ---- */
+
+.orb-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 64px 0 48px;
+}
+
+.orb {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%,
+              oklch(0.74 0.10 282 / 0.85) 0%,
+              oklch(0.62 0.09 282 / 0.35) 45%,
+              transparent 70%);
+  animation: beat 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes beat {
+  0%   { transform: scale(0.86); opacity: 0.55; }
+  18%  { transform: scale(1.00); opacity: 1.00; }
+  100% { transform: scale(0.86); opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orb { animation: none; opacity: 0.8; }
+}
+
+/* ---- type ---- */
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.lede {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--secondary);
+  margin: 0 0 40px;
+}
+
+h2 {
+  font-size: 13px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  font-weight: 600;
+  margin: 48px 0 12px;
+}
+
+h3 { font-size: 17px; font-weight: 600; margin: 28px 0 6px; }
+
+p { margin: 0 0 16px; color: var(--secondary); }
+p.tight { margin-bottom: 8px; }
+
+strong { color: var(--primary); font-weight: 600; }
+
+a { color: var(--accent); text-decoration-color: oklch(0.74 0.10 282 / 0.4); }
+a:hover { text-decoration-color: var(--accent); }
+
+ul { margin: 0 0 16px; padding-left: 20px; color: var(--secondary); }
+li { margin-bottom: 8px; }
+
+hr { border: 0; border-top: 1px solid var(--faint); margin: 48px 0; }
+
+.phases { list-style: none; padding: 0; margin: 0 0 24px; }
+.phases li { margin-bottom: 20px; }
+.phases .name { color: var(--primary); font-weight: 600; display: block; }
+
+.note {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--tertiary);
+  margin-top: 40px;
+}
+
+.updated { font-size: 14px; color: var(--tertiary); margin: -8px 0 32px; }
+
+.mail {
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 0 24px;
+}
+
+footer {
+  width: 100%;
+  max-width: var(--measure);
+  margin-top: 72px;
+  padding-top: 24px;
+  border-top: 1px solid var(--faint);
+  font-size: 14px;
+  color: var(--tertiary);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+footer a { color: var(--secondary); text-decoration: none; }
+footer a:hover { color: var(--primary); }
+footer .spacer { flex: 1; }
+
+@media (max-width: 480px) {
+  h1 { font-size: 28px; }
+  .lede { font-size: 18px; }
+  body { padding: 0 20px 64px; }
+  .orb { width: 132px; height: 132px; }
+}
+
+/* Inner pages open straight on the title; give it room under the masthead. */
+main > h1:first-child { margin-top: 44px; }
