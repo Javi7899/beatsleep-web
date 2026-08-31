@@ -1,6 +1,6 @@
 # beatsleep.web
 
-The public site for **BeatSleep** — what the app is, the privacy policy, the
+The public site for **BeatSleep**: what the app is, the privacy policy, the
 support page and the terms of use that the App Store listing points at.
 
 Static HTML, no build step, no framework, no analytics and no third-party
@@ -19,7 +19,7 @@ app.js          two behaviours: the sticky masthead, and the reveals
 ## The figures
 
 Every chart on the home page is drawn by `tools/figures.py` into
-`assets/figures/*.svg` — the Nightprint, the hypnogram, the ten-week calendar
+`assets/figures/*.svg`: the Nightprint, the hypnogram, the ten-week calendar
 and the descent. They are **not** screenshots of the app and not anybody's
 data: one made-up night, run through the app's own rules, so the shapes stay
 honest. Re-run after editing that file:
@@ -39,7 +39,7 @@ python3 tools/rewrap.py
 ```
 
 `index.html` and `es/index.html` are written out in full and are not touched by
-that script — the home page has a masthead of its own, with the anchors.
+that script, because the home page has a masthead of its own, with the anchors.
 
 ## Publishing
 

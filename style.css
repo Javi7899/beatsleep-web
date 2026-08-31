@@ -1,8 +1,8 @@
-/* BeatSleep — the site.
+/* BeatSleep, the site.
 
    The palette is the app's own, converted from the same OKLCH numbers: black
    ground, no text above 92% white, accent at hue 282. Everything that moves
-   here moves the way the app moves — slowly, and never asking for attention.
+   here moves the way the app moves: slowly, and never asking for attention.
 
    Three widths and nothing else: --measure for prose, --wide for the figures
    and the grids, and the full window for the hero. Sections are separated by
@@ -11,7 +11,9 @@
 
 :root {
   --ground: #000;
+  --raise: #0f1017;  /* for anything older than oklch() */
   --raise: oklch(0.175 0.016 282);
+  --raise-2: #1a1b25;  /* for anything older than oklch() */
   --raise-2: oklch(0.225 0.020 282);
   --line: rgba(255, 255, 255, 0.09);
   --line-soft: rgba(255, 255, 255, 0.055);
@@ -21,9 +23,13 @@
   --tertiary: rgba(255, 255, 255, 0.38);
   --faint: rgba(255, 255, 255, 0.24);
 
+  --accent: #a1a3e9;  /* for anything older than oklch() */
   --accent: oklch(0.74 0.10 282);
+  --accent-soft: #7d7fbb;  /* for anything older than oklch() */
   --accent-soft: oklch(0.62 0.09 282);
+  --accent-lift: #cacdf8;  /* for anything older than oklch() */
   --accent-lift: oklch(0.86 0.06 282);
+  --warm: #e1ab7b;  /* for anything older than oklch() */
   --warm: oklch(0.78 0.09 62);
 
   --measure: 38rem;
@@ -92,7 +98,7 @@ body::before {
   gap: 1rem;
   padding: 0.85rem var(--gutter);
   /* No backdrop-filter. A backdrop root on a sticky bar composites the whole
-     page behind it and visibly dims every section below — and over a black
+     page behind it and visibly dims every section below, and over a black
      ground the blur buys nothing a flat wash does not. */
   background: rgba(0, 0, 0, 0);
   border-bottom: 1px solid transparent;
@@ -135,6 +141,10 @@ body::before {
   text-decoration: none;
   border: 0;
   white-space: nowrap;
+  /* Padding rather than a line-height, so the target a thumb has to hit is
+     the 44 points Apple asks for and not the 20 the text occupies. */
+  padding-block: 0.65rem;
+  -webkit-tap-highlight-color: transparent;
   transition: color 0.25s var(--ease);
 }
 
@@ -142,7 +152,7 @@ body::before {
 .mast nav a[aria-current] { color: var(--primary); }
 
 /* The masthead's own call to action, which only appears once the hero's has
-   been scrolled past — two of them on screen at once is one too many. */
+   been scrolled past, because two of them on screen at once is one too many. */
 .mast .get {
   display: none;
   padding: 0.4rem 0.9rem;
@@ -265,6 +275,7 @@ li::marker { color: var(--faint); }
 /* ================================ hero ================================ */
 
 .hero {
+  min-height: min(92vh, 900px);
   min-height: min(92svh, 900px);
   display: grid;
   place-items: center;
@@ -317,6 +328,7 @@ li::marker { color: var(--faint); }
   margin: 0 auto clamp(1.5rem, 4vw, 2.75rem);
   position: relative;
   aspect-ratio: 16 / 8;
+  max-height: min(34vh, 17rem);
   max-height: min(34svh, 17rem);
 }
 
@@ -580,10 +592,14 @@ figure { margin: 0; }
   gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
 }
+/* Capped whether it is beside the figure or stacked above it: a tablet in
+   portrait is wide enough to run a paragraph to a hundred characters, which
+   is a line nobody can find their way back along. */
+.split .prose { max-width: 34rem; }
+
 @media (min-width: 56rem) {
   .split { grid-template-columns: 1fr 1fr; }
   .split.wider-figure { grid-template-columns: 0.85fr 1.15fr; }
-  .split .prose { max-width: 30rem; }
 }
 
 /* ================================ tiles ================================ */
@@ -783,7 +799,12 @@ footer {
 .footer-inner ul { list-style: none; padding: 0; margin: 0; }
 .footer-inner li { margin-bottom: 0.5rem; }
 
-footer a { color: var(--secondary); border-bottom: none; }
+footer a {
+  color: var(--secondary);
+  border-bottom: none;
+  display: inline-block;
+  padding-block: 0.3rem;
+}
 footer a:hover { color: var(--primary); }
 
 .colophon {
@@ -813,8 +834,23 @@ footer a:hover { color: var(--primary); }
   .badge, .mast .get { transition: none; }
 }
 
+/* A phone on its side, or any short window: the hero stops trying to fill a
+   screen that is 390 points tall, so the badge stays above the fold. */
+@media (max-height: 34rem) and (orientation: landscape) {
+  .hero { min-height: 0; padding-block: 1rem 2.5rem; }
+  .instrument { max-height: 16vh; max-height: 16svh; margin-bottom: 0.5rem; }
+  .hero h1 { font-size: clamp(1.75rem, 1.1rem + 2.6vw, 2.5rem); margin-bottom: 0.6rem; }
+  .hero .lede { margin-bottom: 1rem; font-size: 1rem; max-width: 30rem; }
+  .band { padding-block: clamp(3rem, 8vw, 5rem); }
+}
+
 @media (max-width: 30rem) {
   .mast nav { gap: 0.85rem; font-size: 0.875rem; }
+  /* The sticky pill keeps its width even while invisible, so that nothing
+     jumps when it arrives, which is worth a quarter of a masthead on a
+     desktop and far too much of one on a phone. The badge is in the hero and
+     again at the foot of the page; on a narrow screen that is enough. */
+  .js .mast .get { display: none; }
   .phase { padding-left: 2.5rem; }
   .badge img { height: 44px; }
 }

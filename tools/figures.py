@@ -49,7 +49,7 @@ def wash(alpha):     return "rgba(255,255,255,%.3f)" % alpha
 
 # ------------------------------------------------------------------ night ---
 # One night, as stages. (minutes, stage) where stage is one of
-# awake / rem / core / deep — the four HealthKit hands back.
+# awake / rem / core / deep, the four HealthKit hands back.
 
 NIGHT = [
     (14, "awake"),                      # falling asleep
@@ -221,7 +221,7 @@ def descent(path, w=760, h=230):
     """Twenty-five minutes: the wearer's pulse, and the cadence held just under it.
 
     Simulated rather than drawn by hand, so the shape obeys the app's own two
-    rules — the cadence sheds four beats every ten minutes, and it lets go and
+    rules: the cadence sheds four beats every ten minutes, and it lets go and
     re-anchors when the pulse climbs. The cadence is dashed and the pulse
     solid, so the two are told apart without colour, which is the rule the
     app's own chart follows."""
@@ -236,7 +236,7 @@ def descent(path, w=760, h=230):
     t, pulse_at_end = 0.0, anchor
     while t <= span + 1e-9:
         # The cadence is a schedule: four beats every ten minutes, never below
-        # the floor. The pulse is not driven — it follows, with a lag.
+        # the floor. The pulse is not driven; it follows, with a lag.
         cad = max(cad - 0.4 * dt, floor)
         restless = 8.0 * math.exp(-((t - 8.0) ** 2) / 0.30)      # a turn, at eight minutes
         p += (0.34 * (cad - p) + restless) * dt

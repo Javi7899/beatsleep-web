@@ -129,17 +129,17 @@ def foot(lang, prefix, other_href):
 
 PAGES = [
     # file, lang, key, title, description
-    ("support.html", "en", "support", "BeatSleep — Support",
+    ("support.html", "en", "support", "BeatSleep: Support",
      "Help with BeatSleep: the taps, the night, your data and the subscription. Written by a person, answered by a person."),
-    ("es/support.html", "es", "support", "BeatSleep — Soporte",
+    ("es/support.html", "es", "support", "BeatSleep: Soporte",
      "Ayuda con BeatSleep: los toques, la noche, tus datos y la suscripción. Lo escribe una persona y lo contesta una persona."),
-    ("privacy.html", "en", "privacy", "BeatSleep — Privacy Policy",
+    ("privacy.html", "en", "privacy", "BeatSleep: Privacy Policy",
      "BeatSleep collects nothing. No account, no server, no analytics: what it reads stays on your own devices."),
-    ("terms.html", "en", "terms", "BeatSleep — Terms of Use",
+    ("terms.html", "en", "terms", "BeatSleep: Terms of Use",
      "The terms of use for BeatSleep and BeatSleep Pro."),
-    ("es/privacy.html", "es", "privacy", "BeatSleep — Política de privacidad",
+    ("es/privacy.html", "es", "privacy", "BeatSleep: Política de privacidad",
      "BeatSleep no recoge nada. Sin cuenta, sin servidor y sin analítica: lo que lee se queda en tus propios dispositivos."),
-    ("es/terms.html", "es", "terms", "BeatSleep — Condiciones de uso",
+    ("es/terms.html", "es", "terms", "BeatSleep: Condiciones de uso",
      "Las condiciones de uso de BeatSleep y BeatSleep Pro."),
 ]
 

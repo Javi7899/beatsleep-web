@@ -4,7 +4,7 @@
 //
 // The reveals are the only thing on this site that can hide content, so they
 // are written to fail open: reduced motion, no IntersectionObserver, a script
-// that runs late, an observer that never fires — every one of those ends with
+// that runs late, an observer that never fires. Every one of those ends with
 // everything visible rather than with a black page.
 (function () {
   var mast = document.querySelector('.mast');
@@ -40,7 +40,7 @@
   risers.forEach(function (el) { io.observe(el); });
 
   // The failsafe. If the observer has not accounted for something after four
-  // seconds — a background tab, a browser that throttles it, anything — the
+  // seconds, whether a background tab or a browser that throttles it, the
   // page stops waiting and shows the lot.
   window.setTimeout(revealAll, 4000);
 })();
