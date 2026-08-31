@@ -344,7 +344,7 @@ li::marker { color: var(--faint); }
 }
 
 .trace.pulse { stroke: oklch(0.82 0.05 282 / 0.85); stroke-width: 2; }
-.trace.tap {
+.trace.cadence {
   stroke: var(--accent);
   stroke-width: 2.5;
   stroke-dasharray: 1400;

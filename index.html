@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BeatSleep: your pulse follows the tap</title>
-<meta name="description" content="BeatSleep reads your heart on your Apple Watch and taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep. No sound, no account, and nothing leaves your devices.">
+<title>BeatSleep: your pulse follows the vibration</title>
+<meta name="description" content="BeatSleep reads your heart on your Apple Watch and vibrates on your wrist just under your own rate. Your pulse follows the vibration down, and you fall asleep. No sound, no account, and nothing leaves your devices.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://javi7899.github.io/beatsleep-web/">
 <meta property="og:site_name" content="BeatSleep">
-<meta property="og:title" content="BeatSleep: your pulse follows the tap">
-<meta property="og:description" content="Your Apple Watch reads your heart and taps just under it. Your pulse follows the tap down, and you fall asleep. No sound, no account, no server.">
+<meta property="og:title" content="BeatSleep: your pulse follows the vibration">
+<meta property="og:description" content="Your Apple Watch reads your heart and vibrates just under it. Your pulse follows the vibration down, and you fall asleep. No sound, no account, no server.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://javi7899.github.io/beatsleep-web/">
 <meta property="og:image" content="https://javi7899.github.io/beatsleep-web/assets/mark.png">
@@ -47,19 +47,19 @@
 
     <div class="instrument">
       <div class="orb"></div>
-      <svg viewBox="0 0 480 300" role="img" aria-label="Two lines descending together: the wearer's heart rate, and the taptic cadence held just below it.">
+      <svg viewBox="0 0 480 300" role="img" aria-label="Two lines descending together: the wearer's heart rate, and the vibration cadence held just below it.">
         <path class="trace pulse" d="M 20 74 C 58 70, 68 92, 98 84 C 128 76, 138 106, 168 102
                                      C 198 98, 208 128, 238 126 C 268 124, 278 154, 308 152
                                      C 338 150, 348 178, 378 180 C 408 182, 432 194, 460 198"/>
-        <path class="trace tap" d="M 20 106 C 92 104, 122 132, 170 136 C 222 140, 252 166, 310 180
+        <path class="trace cadence" d="M 20 106 C 92 104, 122 132, 170 136 C 222 140, 252 166, 310 180
                                    C 372 195, 412 210, 460 220"/>
         <text class="trace-label a" x="20" y="56">your pulse</text>
-        <text class="trace-label b" x="20" y="132">the tap</text>
+        <text class="trace-label b" x="20" y="132">the vibration</text>
       </svg>
     </div>
 
-    <h1>Your pulse follows the tap.</h1>
-    <p class="lede">BeatSleep reads your heart on your Apple&nbsp;Watch, then taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep.</p>
+    <h1>Your pulse follows the vibration.</h1>
+    <p class="lede">BeatSleep reads your heart on your Apple&nbsp;Watch, then vibrates on your wrist just under your own rate. Your pulse follows the vibration down, and you fall asleep.</p>
 
     <div class="get-row">
       <a class="badge" href="https://apps.apple.com/app/id6805001777"><img src="assets/badge-en.svg" alt="Download BeatSleep on the App Store" width="146" height="48"></a>
@@ -71,7 +71,7 @@
 <section class="band">
   <div class="wide">
     <div class="claims rise">
-      <div class="claim"><span class="big">No sound</span><p>Not to start, not to lead, not to wake you. The whole mechanism is the taptic engine.</p></div>
+      <div class="claim"><span class="big">No sound</span><p>Not to start, not to lead, not to wake you. The whole mechanism is the vibration motor.</p></div>
       <div class="claim"><span class="big">No screen</span><p>It exists only to prove it is working, and it fades away once you no longer need it.</p></div>
       <div class="claim"><span class="big">No account</span><p>No sign-in, no server, no analytics, no third-party SDKs. There is nothing to sign up for.</p></div>
     </div>
@@ -83,12 +83,12 @@
     <div class="prose rise">
       <span class="eyebrow">The mechanism</span>
       <h2>A cadence your body can follow down.</h2>
-      <p>For the first 45 seconds nothing taps: BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</p>
+      <p>For the first 45 seconds nothing vibrates: BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</p>
       <p>Then the cadence anchors to that rate and sheds <strong>four beats every ten minutes</strong>, staying just under your pulse, far enough to lead and close enough to be followed. The number on screen is always your real heart rate, never the target, so what you watch is yourself following.</p>
       <p>If you turn over, if a noise wakes you, if your pulse climbs, it stops pulling and re-anchors to your real heartbeat within a minute. Restlessness is followed, not fought.</p>
     </div>
     <figure class="plate rise d1">
-      <img src="assets/figures/descent.svg" alt="Twenty-five minutes of a descent. The solid line is the pulse; the dashed line is the taptic cadence, held just below it and shedding four beats every ten minutes. Eight minutes in the pulse climbs, the cadence lets go and re-anchors, and then both fall again." width="760" height="230" loading="lazy" decoding="async">
+      <img src="assets/figures/descent.svg" alt="Twenty-five minutes of a descent. The solid line is the pulse; the dashed line is the vibration cadence, held just below it and shedding four beats every ten minutes. Eight minutes in the pulse climbs, the cadence lets go and re-anchors, and then both fall again." width="760" height="230" loading="lazy" decoding="async">
       <ul class="legend">
         <li><span class="key solid"></span>your pulse</li>
         <li><span class="key dashed"></span>the cadence</li>
@@ -105,7 +105,7 @@
       <h2>Four phases, and then it leaves you alone.</h2>
     </div>
     <ul class="phases rise d1">
-      <li class="phase"><span class="name">Listening<span class="when">0–45 s</span></span><p>Nothing taps. BeatSleep measures the rate you are actually resting at, rather than assuming one for you.</p></li>
+      <li class="phase"><span class="name">Listening<span class="when">0–45 s</span></span><p>Nothing vibrates. BeatSleep measures the rate you are actually resting at, rather than assuming one for you.</p></li>
       <li class="phase"><span class="name">Entraining<span class="when">the quarter hour after</span></span><p>The cadence anchors to that rate and descends, staying just under your pulse and re-anchoring whenever you stir.</p></li>
       <li class="phase"><span class="name">Holding<span class="when">once you reach your floor</span></span><p>The text decays away and the screen dims to a single slow orb. Nothing asks for your attention again.</p></li>
       <li class="phase"><span class="name">Rising<span class="when">inside your wake window</span></span><p>If you asked for it, the cadence inverts and quickens. You wake to a quickening, not to an alarm.</p></li>
@@ -118,7 +118,7 @@
     <div class="lead-in rise">
       <span class="eyebrow">The night is yours to shape</span>
       <h2>It ends when it is done.</h2>
-      <p class="lede">Five minutes after your pulse has settled at the target, the night closes itself. By then the taps have nothing left to do, and a watch that tracks until sunrise is a flat battery by lunchtime.</p>
+      <p class="lede">Five minutes after your pulse has settled at the target, the night closes itself. By then the vibrations have nothing left to do, and a watch that tracks until sunrise is a flat battery by lunchtime.</p>
     </div>
     <div class="tiles rise d1">
       <div class="tile">
@@ -127,14 +127,14 @@
       </div>
       <div class="tile">
         <h3>Or the whole night</h3>
-        <p>Led all the way through, with a taptic quickening inside your wake window instead of an alarm.</p>
+        <p>Led all the way through, with a quickening of the vibration inside your wake window instead of an alarm.</p>
       </div>
       <div class="tile">
         <h3>Your floor, not a guess</h3>
         <p>It starts from your own sleeping minimum in Apple Health, then moves one beat a night on the evidence of your own nights, and never leads you below it.</p>
       </div>
     </div>
-    <p class="callout rise d2">Apple&nbsp;Watch gives an app no volume for haptics, only a choice of taps, and most of them carry a tone through the speaker. BeatSleep uses the one that does not, so the person beside you sleeps through your night.</p>
+    <p class="callout rise d2">Apple&nbsp;Watch gives an app no volume for vibration, only a handful of patterns, and most of them carry a tone through the speaker. BeatSleep uses the one that does not, so the person beside you sleeps through your night.</p>
   </div>
 </section>
 
@@ -314,11 +314,11 @@
     <div class="rise d1">
       <details class="qa">
         <summary>Do I need an Apple&nbsp;Watch?</summary>
-        <div class="answer"><p>Yes, for the taps: the cadence is produced by the watch, and without one the app has nothing to lead you with. The iPhone side still reads your sleep out of Apple Health, so it has something to show you either way.</p></div>
+        <div class="answer"><p>Yes, for the vibration: the cadence is produced by the watch, and without one the app has nothing to lead you with. The iPhone side still reads your sleep out of Apple Health, so it has something to show you either way.</p></div>
       </details>
       <details class="qa">
         <summary>Will it wake the person beside me?</summary>
-        <div class="answer"><p>No. BeatSleep uses the one haptic on Apple&nbsp;Watch that carries no tone through the speaker. It makes no sound at any point: not to start, not to lead, not to wake you.</p></div>
+        <div class="answer"><p>No. BeatSleep uses the one vibration on Apple&nbsp;Watch that carries no tone through the speaker. It makes no sound at any point: not to start, not to lead, not to wake you.</p></div>
       </details>
       <details class="qa">
         <summary>Does it run down the battery?</summary>
@@ -340,7 +340,7 @@
 <section class="band closing">
   <div class="narrow rise">
     <h2>Tonight, then.</h2>
-    <p class="lede">Put the watch on, and let your pulse follow the tap down.</p>
+    <p class="lede">Put the watch on, and let your pulse follow the vibration down.</p>
     <div class="get-row">
       <a class="badge" href="https://apps.apple.com/app/id6805001777"><img src="assets/badge-en.svg" alt="Download BeatSleep on the App Store" width="146" height="48"></a>
       <p class="terms-line">Free, with an optional subscription · Requires an Apple&nbsp;Watch</p>
