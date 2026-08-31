@@ -4,32 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — your pulse follows the tap</title>
-<meta name="description" content="BeatSleep reads your heart on your Apple Watch and taps just under it. Your pulse follows the tap down, and you fall asleep.">
+<meta name="description" content="BeatSleep reads your heart on your Apple Watch and taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep. No sound, no account, and nothing leaves your devices.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://javi7899.github.io/beatsleep-web/">
+<meta property="og:site_name" content="BeatSleep">
 <meta property="og:title" content="BeatSleep — your pulse follows the tap">
-<meta property="og:description" content="BeatSleep reads your heart on your Apple Watch and taps just under it. Your pulse follows the tap down, and you fall asleep.">
+<meta property="og:description" content="Your Apple Watch reads your heart and taps just under it. Your pulse follows the tap down, and you fall asleep. No sound, no account, no server.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/mark.png">
+<meta property="og:url" content="https://javi7899.github.io/beatsleep-web/">
+<meta property="og:image" content="https://javi7899.github.io/beatsleep-web/assets/mark.png">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<link rel="alternate" hreflang="es" href="es/">
+<link rel="alternate" hreflang="en" href="https://javi7899.github.io/beatsleep-web/">
+<link rel="alternate" hreflang="es" href="https://javi7899.github.io/beatsleep-web/es/">
+<link rel="alternate" hreflang="x-default" href="https://javi7899.github.io/beatsleep-web/">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="mast">
-  <a class="home" href=""><img src="assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <a class="home" href="./"><img src="assets/mark-120.png" alt=""><span>BeatSleep</span></a>
   <nav>
+    <a class="drop" href="#how">How it works</a>
     <a href="privacy.html">Privacy</a>
     <a href="support.html">Support</a>
-    <a href="es/">Español</a>
+    <a href="es/" hreflang="es" lang="es">Español</a>
+    <a class="get" href="https://apps.apple.com/app/id6805001777">Get it</a>
   </nav>
 </header>
 
-<section class="hero">
+<main id="main">
+
+<section class="band hero">
   <div class="hero-inner">
 
     <div class="instrument">
@@ -47,53 +60,331 @@
 
     <h1>Your pulse follows the tap.</h1>
     <p class="lede">BeatSleep reads your heart on your Apple&nbsp;Watch, then taps your wrist just under your own rate. Your pulse follows the tap down, and you fall asleep.</p>
+
+    <div class="get-row">
+      <a class="badge" href="https://apps.apple.com/app/id6805001777"><img src="assets/badge-en.svg" alt="Download BeatSleep on the App Store" width="146" height="48"></a>
+      <p class="terms-line">Free, with an optional subscription · Requires an Apple&nbsp;Watch</p>
+    </div>
   </div>
 </section>
 
-<main>
-  <div class="claims rise">
-    <div class="claim"><span class="big">No sound</span><p>Not to start, not to lead, not to wake you.</p></div>
-    <div class="claim"><span class="big">No screen</span><p>It fades away once you no longer need it.</p></div>
-    <div class="claim"><span class="big">No account</span><p>Nothing leaves your devices. There is no server.</p></div>
+<section class="band">
+  <div class="wide">
+    <div class="claims rise">
+      <div class="claim"><span class="big">No sound</span><p>Not to start, not to lead, not to wake you. The whole mechanism is the taptic engine.</p></div>
+      <div class="claim"><span class="big">No screen</span><p>It exists only to prove it is working, and it fades away once you no longer need it.</p></div>
+      <div class="claim"><span class="big">No account</span><p>No sign-in, no server, no analytics, no third-party SDKs. There is nothing to sign up for.</p></div>
+    </div>
   </div>
+</section>
 
-  <h2 class="rise">How a night goes</h2>
-  <ul class="phases rise">
-    <li class="phase"><span class="name">Listening</span><p>For the first 45 seconds nothing taps. BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</p></li>
-    <li class="phase"><span class="name">Entraining</span><p>The cadence anchors to that rate and sheds four beats every ten minutes, staying just under your pulse — far enough to lead, close enough to be followed.</p></li>
-    <li class="phase"><span class="name">Holding</span><p>Once you reach your floor the text decays away and the screen dims to a single slow orb. Nothing asks for your attention again.</p></li>
-    <li class="phase"><span class="name">Rising</span><p>Inside your wake window the cadence inverts and quickens. You wake to a quickening, not to an alarm.</p></li>
-  </ul>
-
-  <h2 class="rise">It follows you, not a schedule</h2>
-  <div class="rise">
-    <p>If you turn over, if a noise wakes you, if your pulse climbs — BeatSleep stops pulling and re-anchors to your real heartbeat within a minute. Restlessness is followed, not fought.</p>
-    <p>Your floor is not a number you guess at. After three full nights BeatSleep derives it from your own overnight minimum, one beat at a time, and never leads you below it.</p>
+<section class="band" id="how">
+  <div class="wide split wider-figure">
+    <div class="prose rise">
+      <span class="eyebrow">The mechanism</span>
+      <h2>A cadence your body can follow down.</h2>
+      <p>For the first 45 seconds nothing taps: BeatSleep measures the rate you are actually resting at, because the descent has to start where you are.</p>
+      <p>Then the cadence anchors to that rate and sheds <strong>four beats every ten minutes</strong>, staying just under your pulse — far enough to lead, close enough to be followed. The number on screen is always your real heart rate, never the target, so what you watch is yourself following.</p>
+      <p>If you turn over, if a noise wakes you, if your pulse climbs, it stops pulling and re-anchors to your real heartbeat within a minute. Restlessness is followed, not fought.</p>
+    </div>
+    <figure class="plate rise d1">
+      <img src="assets/figures/descent.svg" alt="Twenty-five minutes of a descent. The solid line is the pulse; the dashed line is the taptic cadence, held just below it and shedding four beats every ten minutes. Eight minutes in the pulse climbs, the cadence lets go and re-anchors, and then both fall again." width="760" height="230" loading="lazy" decoding="async">
+      <ul class="legend">
+        <li><span class="key solid"></span>your pulse</li>
+        <li><span class="key dashed"></span>the cadence</li>
+      </ul>
+      <figcaption>Drawn by this page from the app's own two rules — four beats every ten minutes, and let go when the gap grows. Not a recording of anybody's night.</figcaption>
+    </figure>
   </div>
+</section>
 
-  <h2 class="rise">In the morning</h2>
-  <div class="rise">
-    <p>One screen. How long it took you to go under, against <strong>your own</strong> median — not against anyone else's. The moment your pulse and the cadence converged. How far you were drawn down.</p>
-    <p>No score. No streak. No ring to close.</p>
+<section class="band">
+  <div class="narrow">
+    <div class="lead-in rise">
+      <span class="eyebrow">How a night goes</span>
+      <h2>Four phases, and then it leaves you alone.</h2>
+    </div>
+    <ul class="phases rise d1">
+      <li class="phase"><span class="name">Listening<span class="when">0–45 s</span></span><p>Nothing taps. BeatSleep measures the rate you are actually resting at, rather than assuming one for you.</p></li>
+      <li class="phase"><span class="name">Entraining<span class="when">the quarter hour after</span></span><p>The cadence anchors to that rate and descends, staying just under your pulse and re-anchoring whenever you stir.</p></li>
+      <li class="phase"><span class="name">Holding<span class="when">once you reach your floor</span></span><p>The text decays away and the screen dims to a single slow orb. Nothing asks for your attention again.</p></li>
+      <li class="phase"><span class="name">Rising<span class="when">inside your wake window</span></span><p>If you asked for it, the cadence inverts and quickens. You wake to a quickening, not to an alarm.</p></li>
+    </ul>
   </div>
+</section>
 
-  <h2 class="rise">Nothing leaves your devices</h2>
-  <div class="rise">
-    <p>BeatSleep has no account and no server. Your heart rate is read from HealthKit on the watch, the summary is computed there overnight, and it travels to your iPhone over Apple's encrypted device link. Optional iCloud sync writes to <strong>your own</strong> private iCloud database, in encrypted fields — never to us, because there is no us to send it to.</p>
-    <p><a href="privacy.html">Read the privacy policy</a></p>
+<section class="band">
+  <div class="wide">
+    <div class="lead-in rise">
+      <span class="eyebrow">The night is yours to shape</span>
+      <h2>It ends when it is done.</h2>
+      <p class="lede">Five minutes after your pulse has settled at the target, the night closes itself. By then the taps have nothing left to do — and a watch that tracks until sunrise is a flat battery by lunchtime.</p>
+    </div>
+    <div class="tiles rise d1">
+      <div class="tile">
+        <h3>Or a hard ceiling</h3>
+        <p>Fifteen minutes, an hour, whatever suits. The session stops there whether or not you have settled.</p>
+      </div>
+      <div class="tile">
+        <h3>Or the whole night</h3>
+        <p>Led all the way through, with a taptic quickening inside your wake window instead of an alarm.</p>
+      </div>
+      <div class="tile">
+        <h3>Your floor, not a guess</h3>
+        <p>It starts from your own sleeping minimum in Apple Health, then moves one beat a night on the evidence of your own nights — and never leads you below it.</p>
+      </div>
+    </div>
+    <p class="callout rise d2">Apple&nbsp;Watch gives an app no volume for haptics, only a choice of taps — and most of them carry a tone through the speaker. BeatSleep uses the one that does not, so the person beside you sleeps through your night.</p>
   </div>
+</section>
 
-  <p class="note">Requires an Apple&nbsp;Watch. BeatSleep is not a medical device. It does not diagnose, treat, cure or prevent any condition. If you have a sleep disorder or a heart condition, talk to a doctor rather than to an app.</p>
+<section class="band">
+  <div class="wide split">
+    <div class="prose rise">
+      <span class="eyebrow">Your sleep, asked better questions</span>
+      <h2>Health tells you that you slept seven hours.</h2>
+      <p>BeatSleep tells you that forty of those minutes were awake, in eleven separate pieces. How long you took to fall asleep. How far your pulse fell below your resting rate. How much the middle of your night moves from one day to the next.</p>
+      <p>None of it is new data — it is the same data with the arithmetic done, read from Apple Health on your iPhone. Which is also why there is something to look at on the very first morning, <strong>including every night from before you installed it</strong>.</p>
+    </div>
+    <figure class="plate rise d1">
+      <img src="assets/figures/hypnogram.svg" alt="A night as a timeline of stages, from awake at the top to deep sleep at the bottom: four cycles, with brief surfacings between them." width="760" height="190" loading="lazy" decoding="async">
+      <figcaption>A night's stages, end to end. Put a finger anywhere on it in the app and the Nightprint follows the same minute.</figcaption>
+    </figure>
+  </div>
+  <div class="wide">
+    <div class="stats rise d2">
+      <div class="stat"><span class="num">87<span class="unit">%</span></span><span class="what">Of the time in bed, asleep</span></div>
+      <div class="stat"><span class="num">14<span class="unit">min</span></span><span class="what">To fall asleep</span></div>
+      <div class="stat"><span class="num">11</span><span class="what">Surfacings, 40 minutes in all</span></div>
+      <div class="stat"><span class="num">−12<span class="unit">bpm</span></span><span class="what">Below your resting rate</span></div>
+    </div>
+    <p class="note flush rise d3" style="margin-top:1rem">An example night, drawn by this page. Every figure on this site is made up — none of them is anybody's measurement.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wide split wider-figure">
+    <div class="prose rise">
+      <span class="eyebrow">The Nightprint</span>
+      <h2>One night, as a single figure.</h2>
+      <p>Every sleep app draws a night as a bar chart lying on its side. This one bends the night into a circle: it starts at the top, runs clockwise to morning, and each spoke reaches inward as far as that minute was deep. The thin line threaded through it is your pulse, closest to the centre when your heart was slowest.</p>
+      <p>A night that fell away cleanly is a deep, even flower. A broken one is a ragged ring with the middle eaten out of it. <strong>You learn to read your own before you learn to read the numbers</strong> — which is the point.</p>
+    </div>
+    <figure class="plate print rise d1">
+      <img src="assets/figures/nightprint.svg" alt="One night drawn as a circle: it starts at the top and runs clockwise to morning, and each spoke reaches inward as far as that minute was deep." width="420" height="420" loading="lazy" decoding="async">
+      <figcaption>The same night as the timeline above, bent into a circle.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wide split">
+    <figure class="plate rise">
+      <img src="assets/figures/weeks.svg" alt="Ten weeks of nights as a grid, one square a night, shaded by lightness: the darker the square the worse the night, and an outline is a night with nothing recorded." width="314" height="218" loading="lazy" decoding="async">
+      <ul class="legend">
+        <li><span class="key square" style="background:oklch(0.24 0.025 282)"></span>a worse night</li>
+        <li><span class="key square" style="background:oklch(0.82 0.09 282)"></span>a better one</li>
+        <li><span class="key square outline"></span>nothing recorded</li>
+      </ul>
+      <figcaption>Shaded by lightness rather than by hue, so it survives any colour vision.</figcaption>
+    </figure>
+    <div class="prose rise d1">
+      <span class="eyebrow">Ten weeks at a glance</span>
+      <h2>Scored against your own nights. Never anybody else's.</h2>
+      <p>A number that compares you to a population is worse than no number: it tells a short sleeper they are broken and a bad sleeper they are fine. So the baseline here is <strong>your own median</strong> — and where there is not yet enough of your history to have one, the screen says which parts are still being learned rather than quietly inventing them.</p>
+      <p>Tag a night in the morning — a late meal, a drink, a hard session — and BeatSleep will compare the nights you tagged against the ones you did not. It needs four of each before it will say a word, and it will never tell you that one caused the other.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="narrow">
+    <div class="lead-in rise">
+      <span class="eyebrow">In the morning</span>
+      <h2>One screen, and no ring to close.</h2>
+    </div>
+    <div class="rise d1">
+      <p>How long it took you to go under, against <strong>your own</strong> median — not against anyone else's. The moment your pulse and the cadence converged. How far you were drawn down.</p>
+      <p>The sentence at the top is written on the phone itself, by the on-device model, in your own language rather than translated out of somebody else's. Nothing is sent anywhere to write it, and it is not allowed to tell you what your night <em>meant</em>: a sleep app that interprets is making a medical claim.</p>
+      <p class="callout">No score against strangers. No streak. No ring to close.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wide">
+    <div class="lead-in rise">
+      <span class="eyebrow">Everywhere you already look</span>
+      <h2>Without opening the app.</h2>
+    </div>
+    <div class="tiles six rise d1">
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2.2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2.2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2.2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2.2"/></svg></span>
+        <h3>Home screen widgets</h3>
+        <p>Last night's Nightprint, and how long it took you to go under. The shape is the answer, so the app only gets opened when you want a reason.</p>
+      </div>
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="4"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <h3>A watch complication</h3>
+        <p>Tonight's plan on the face you are already wearing, and a Control Center button that begins the night from anywhere.</p>
+      </div>
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="7.5" width="19" height="9" rx="4.5"/><circle cx="8" cy="12" r="1.6" fill="currentColor" stroke="none"/><path d="M12 12h6"/></svg></span>
+        <h3>A Live Activity</h3>
+        <p>The descent on the Lock Screen and in the Dynamic Island while it runs — glanceable at arm's length, in the dark, without unlocking anything.</p>
+      </div>
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h11a4.5 4.5 0 1 1 0 9H9"/><path d="M11.5 13 9 16l2.5 3"/></svg></span>
+        <h3>Shortcuts and Siri</h3>
+        <p>Begin a night, lead a breath, or ask how last night went, from a shortcut or an automation.</p>
+      </div>
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="2.5" width="18" height="19" rx="3"/><path d="M3 8.5h18"/><path d="M12 8.5v13"/></svg></span>
+        <h3>On the iPad too</h3>
+        <p>Not a phone column blown up. The screen is dealt into columns that fill it, and it follows Stage Manager and Split View as they change.</p>
+      </div>
+      <div class="tile">
+        <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.4"/></svg></span>
+        <h3>A breath to wind down</h3>
+        <p>Led by the wrist rather than by a voice, and written into your own Health app as mindful minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="narrow">
+    <div class="lead-in rise">
+      <span class="eyebrow">Nothing leaves your devices</span>
+      <h2>There is no server to send it to.</h2>
+    </div>
+    <div class="rise d1">
+      <p>Your heart rate is read from HealthKit on the watch. The summary is computed there, overnight, and travels to your iPhone over Apple's encrypted device link. The only thing written back is the mindful minutes of your descent, into your own Health app.</p>
+      <p>Optional iCloud sync — off until you turn it on — writes to <strong>your own</strong> private iCloud database, in encrypted fields. Turning it off deletes those records rather than merely ignoring them. There is no account system, no analytics, no advertising identifier and no third-party SDK anywhere in the app.</p>
+      <p>You can export everything as a file, or erase it for good, at any time.</p>
+      <p><a href="privacy.html">Read the privacy policy</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wide">
+    <div class="lead-in rise">
+      <span class="eyebrow">Free, and Pro</span>
+      <h2>Nothing that decides how a sleeping body is led is ever for sale.</h2>
+    </div>
+    <div class="plans rise d1">
+      <div class="plan">
+        <span class="kind">BeatSleep</span>
+        <span class="price">Free<small>, forever</small></span>
+        <p class="aside">Everything that makes the app work.</p>
+        <ul>
+          <li>The whole session, every night</li>
+          <li>The descent, and the failsafe that ends it</li>
+          <li>The adaptive floor, learned from your own nights</li>
+          <li>Last night, and the last seven</li>
+          <li>Your sleep read from Apple Health</li>
+          <li>The Tide waveform, the one most wrists prefer</li>
+        </ul>
+      </div>
+      <div class="plan pro">
+        <span class="kind">BeatSleep Pro</span>
+        <span class="price">€3.99<small> a month, or €24.99 a year</small></span>
+        <p class="aside">Depth, for the people who want it.</p>
+        <ul>
+          <li>Every night you have ever recorded</li>
+          <li>Trends over weeks, against your own median</li>
+          <li>The Thrum and Hush waveforms</li>
+          <li>Your nights on all your devices, through your own iCloud</li>
+          <li>Export everything as a file</li>
+          <li>Six more accents, and three grounds to set them on</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note flush rise d2" style="margin-top:1.25rem">Billed to your Apple Account, renewing until you cancel, which you can do at any time in Settings. See the <a href="terms.html">terms of use</a>.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="narrow">
+    <div class="lead-in rise">
+      <span class="eyebrow">Questions</span>
+      <h2>Before you start.</h2>
+    </div>
+    <div class="rise d1">
+      <details class="qa">
+        <summary>Do I need an Apple&nbsp;Watch?</summary>
+        <div class="answer"><p>Yes, for the taps — the cadence is produced by the watch, and without one the app has nothing to lead you with. The iPhone side still reads your sleep out of Apple Health, so it has something to show you either way.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Will it wake the person beside me?</summary>
+        <div class="answer"><p>No. BeatSleep uses the one haptic on Apple&nbsp;Watch that carries no tone through the speaker. It makes no sound at any point — not to start, not to lead, not to wake you.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Does it run down the battery?</summary>
+        <div class="answer"><p>It is not meant to run all night. Five minutes after your pulse settles at the target the session closes itself, which is usually a quarter of an hour of watch time. The whole-night mode exists, and it costs what a whole night costs.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Where does my data go?</summary>
+        <div class="answer"><p>Nowhere. There is no account and no server. It stays on your devices, and moves between them over Apple's encrypted link — or, if you switch it on, through your own private iCloud. The <a href="privacy.html">privacy policy</a> says so in detail.</p></div>
+      </details>
+      <details class="qa">
+        <summary>Is it a medical device?</summary>
+        <div class="answer"><p>No. It does not diagnose, treat, cure or prevent any condition, and nothing it shows you is a medical measurement. If you have a sleep disorder or a heart condition, talk to a doctor rather than to an app.</p></div>
+      </details>
+      <p style="margin-top:1.5rem"><a href="support.html">More answers, and the address to write to</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="band closing">
+  <div class="narrow rise">
+    <h2>Tonight, then.</h2>
+    <p class="lede">Put the watch on, and let your pulse follow the tap down.</p>
+    <div class="get-row">
+      <a class="badge" href="https://apps.apple.com/app/id6805001777"><img src="assets/badge-en.svg" alt="Download BeatSleep on the App Store" width="146" height="48"></a>
+      <p class="terms-line">Free, with an optional subscription · Requires an Apple&nbsp;Watch</p>
+    </div>
+    <p class="note">BeatSleep is not a medical device. It does not diagnose, treat, cure or prevent any condition. If you have a sleep disorder or a heart condition, talk to a doctor rather than to an app.</p>
+  </div>
+</section>
+
 </main>
 
 <footer>
   <div class="footer-inner">
-    <a href="">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="support.html">Support</a>
-    <a href="terms.html">Terms</a>
+    <div>
+      <h2>BeatSleep</h2>
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="https://apps.apple.com/app/id6805001777">On the App Store</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Language</h2>
+      <ul>
+        <li><a href="es/" hreflang="es" lang="es">Español</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Write to me</h2>
+      <ul>
+        <li><a href="mailto:beatsleepf@gmail.com">beatsleepf@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon">
+    <span class="mark"><img src="assets/mark-120.png" alt="">© 2026 Javier Torres Rubio</span>
     <span class="spacer"></span>
-    <span>&copy; 2026 Javier Torres Rubio</span>
+    <span>This site has no cookies, no analytics and no third-party requests.</span>
   </div>
 </footer>
 </div>

@@ -1,28 +1,41 @@
 /* BeatSleep — the site.
-   The palette is the app's, converted from the same OKLCH numbers: black
-   ground, no text above 90% white, accent at hue 282. Everything that moves
-   here moves the way the app moves — slow, and never asking for attention. */
+
+   The palette is the app's own, converted from the same OKLCH numbers: black
+   ground, no text above 92% white, accent at hue 282. Everything that moves
+   here moves the way the app moves — slowly, and never asking for attention.
+
+   Three widths and nothing else: --measure for prose, --wide for the figures
+   and the grids, and the full window for the hero. Sections are separated by
+   a hairline rather than by a coloured band, because a black ground with one
+   accent on it has no second colour to spend. */
 
 :root {
   --ground: #000;
-  --raise: oklch(0.19 0.018 282);
+  --raise: oklch(0.175 0.016 282);
+  --raise-2: oklch(0.225 0.020 282);
   --line: rgba(255, 255, 255, 0.09);
+  --line-soft: rgba(255, 255, 255, 0.055);
 
   --primary: rgba(255, 255, 255, 0.92);
-  --secondary: rgba(255, 255, 255, 0.56);
-  --tertiary: rgba(255, 255, 255, 0.36);
+  --secondary: rgba(255, 255, 255, 0.58);
+  --tertiary: rgba(255, 255, 255, 0.38);
+  --faint: rgba(255, 255, 255, 0.24);
 
   --accent: oklch(0.74 0.10 282);
   --accent-soft: oklch(0.62 0.09 282);
+  --accent-lift: oklch(0.86 0.06 282);
   --warm: oklch(0.78 0.09 62);
 
   --measure: 38rem;
+  --wide: 66rem;
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
+  --band: clamp(4.5rem, 11vw, 8rem);
 
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
           "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --radius: 18px;
 }
 
 * { box-sizing: border-box; }
@@ -38,9 +51,10 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  font-synthesis-weight: none;
 }
 
-/* A single wash of accent behind everything, like the app's ground at night. */
+/* One wash of accent behind everything, like the app's ground at night. */
 body::before {
   content: "";
   position: fixed;
@@ -48,13 +62,26 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(120vw 80vh at 50% -10%, oklch(0.74 0.10 282 / 0.13), transparent 60%),
-    radial-gradient(80vw 60vh at 90% 100%, oklch(0.62 0.09 282 / 0.07), transparent 60%);
+    radial-gradient(120vw 78vh at 50% -12%, oklch(0.74 0.10 282 / 0.14), transparent 62%),
+    radial-gradient(88vw 62vh at 92% 104%, oklch(0.62 0.09 282 / 0.08), transparent 62%);
 }
 
 .wrap { position: relative; z-index: 1; }
 
-/* ============================ masthead ============================ */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  background: var(--raise-2);
+  color: var(--primary);
+  border: 0;
+  border-radius: 0 0 10px 0;
+  z-index: 90;
+}
+.skip:focus { left: 0; }
+
+/* ============================== masthead ============================== */
 
 .mast {
   position: sticky;
@@ -62,19 +89,18 @@ body::before {
   z-index: 40;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  padding: 1rem var(--gutter);
-  /* No backdrop-filter here. A backdrop root on a sticky bar composites the
-     whole page behind it and visibly dims every section below — and over a
-     black ground the blur buys nothing a flat wash does not. */
+  padding: 0.85rem var(--gutter);
+  /* No backdrop-filter. A backdrop root on a sticky bar composites the whole
+     page behind it and visibly dims every section below — and over a black
+     ground the blur buys nothing a flat wash does not. */
   background: rgba(0, 0, 0, 0);
   border-bottom: 1px solid transparent;
   transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 
 .mast.stuck {
-  background: rgba(0, 0, 0, 0.94);
+  background: rgba(0, 0, 0, 0.92);
   border-bottom-color: var(--line);
 }
 
@@ -83,10 +109,12 @@ body::before {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
+  border: 0;
   color: var(--primary);
   font-weight: 590;
   letter-spacing: -0.015em;
   font-size: 1.0625rem;
+  margin-right: auto;
 }
 
 .mast .home img {
@@ -98,38 +126,57 @@ body::before {
 .mast nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 3vw, 1.75rem);
+  gap: clamp(0.75rem, 2.4vw, 1.6rem);
   font-size: 0.9375rem;
 }
 
 .mast nav a {
   color: var(--secondary);
   text-decoration: none;
+  border: 0;
+  white-space: nowrap;
   transition: color 0.25s var(--ease);
 }
 
 .mast nav a:hover { color: var(--primary); }
 .mast nav a[aria-current] { color: var(--primary); }
 
-/* ============================= layout ============================= */
-
-main {
-  max-width: var(--measure);
-  margin: 0 auto;
-  padding: 0 var(--gutter) clamp(5rem, 12vw, 9rem);
+/* The masthead's own call to action, which only appears once the hero's has
+   been scrolled past — two of them on screen at once is one too many. */
+.mast .get {
+  display: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #000;
+  font-weight: 590;
+  font-size: 0.875rem;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
+.mast .get:hover { color: #000; opacity: 0.86; }
+.js .mast .get { display: inline-block; opacity: 0; transform: translateY(-4px); pointer-events: none; }
+.js .mast.stuck .get { opacity: 1; transform: none; pointer-events: auto; }
 
-.hero {
-  min-height: min(88svh, 840px);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: clamp(2rem, 6vw, 4rem) var(--gutter) clamp(3rem, 8vw, 6rem);
+/* =============================== layout =============================== */
+
+main { display: block; }
+
+/* The masthead is sticky, so an anchor has to stop short of it. */
+[id] { scroll-margin-top: 5rem; }
+
+.band {
+  padding: var(--band) var(--gutter);
+  border-top: 1px solid var(--line-soft);
 }
+.band:first-child { border-top: 0; }
 
-.hero-inner { max-width: 44rem; }
+.narrow { max-width: var(--measure); margin-inline: auto; }
+.wide   { max-width: var(--wide);    margin-inline: auto; }
 
-/* ============================== type ============================== */
+.lead-in { max-width: var(--measure); margin: 0 auto clamp(2rem, 5vw, 3rem); }
+.wide > .lead-in { margin-inline: 0; }
+
+/* ================================ type ================================ */
 
 h1 {
   font-size: clamp(2.25rem, 1.4rem + 4.2vw, 4.25rem);
@@ -140,29 +187,14 @@ h1 {
   text-wrap: balance;
 }
 
-.hero h1 {
-  background: linear-gradient(180deg, #fff 32%, oklch(0.80 0.08 282 / 0.86) 118%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.lede {
-  font-size: clamp(1.0625rem, 0.98rem + 0.5vw, 1.375rem);
-  line-height: 1.5;
-  color: var(--secondary);
-  margin: 0 auto 2rem;
-  max-width: 32rem;
-  text-wrap: pretty;
-}
-
 h2 {
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--tertiary);
+  font-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.028em;
   font-weight: 600;
-  margin: clamp(3.5rem, 9vw, 5.5rem) 0 1.25rem;
+  color: var(--primary);
+  margin: 0 0 1rem;
+  text-wrap: balance;
 }
 
 h3 {
@@ -173,20 +205,39 @@ h3 {
   color: var(--primary);
 }
 
+.eyebrow {
+  display: block;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  font-weight: 600;
+  margin: 0 0 0.9rem;
+}
+
+.lede {
+  font-size: clamp(1.0625rem, 0.98rem + 0.5vw, 1.3125rem);
+  line-height: 1.5;
+  color: var(--secondary);
+  margin: 0 0 1.5rem;
+  text-wrap: pretty;
+}
+
 p { margin: 0 0 1rem; color: var(--secondary); text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
 strong { color: var(--primary); font-weight: 590; }
 
 a {
   color: var(--accent);
   text-decoration: none;
   border-bottom: 1px solid oklch(0.74 0.10 282 / 0.32);
-  transition: border-color 0.25s var(--ease);
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
 }
 a:hover { border-bottom-color: var(--accent); }
 
 ul { margin: 0 0 1rem; padding-left: 1.15rem; color: var(--secondary); }
 li { margin-bottom: 0.5rem; }
-li::marker { color: var(--tertiary); }
+li::marker { color: var(--faint); }
 
 .updated {
   font-size: 0.875rem;
@@ -198,10 +249,11 @@ li::marker { color: var(--tertiary); }
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--tertiary);
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
+  max-width: var(--measure);
+  margin-inline: auto;
 }
+/* Under a full-width grid the note lines up with it, not with the prose. */
+.note.flush { margin-inline: 0; }
 
 .mail {
   display: inline-block;
@@ -210,15 +262,62 @@ li::marker { color: var(--tertiary); }
   margin: 0.25rem 0 1.75rem;
 }
 
-/* ======================== the hero instrument ======================== */
+/* ================================ hero ================================ */
+
+.hero {
+  min-height: min(92svh, 900px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(1rem, 4vw, 3rem) var(--gutter) clamp(3rem, 7vw, 5rem);
+  border: 0;
+}
+
+.hero-inner { max-width: 46rem; width: 100%; }
+
+.hero h1 {
+  background: linear-gradient(180deg, #fff 30%, oklch(0.80 0.08 282 / 0.86) 122%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero .lede { margin: 0 auto 2rem; max-width: 33rem; }
+
+/* The badge, and the line under it that says what it costs and what it needs. */
+.get-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.badge {
+  display: inline-block;
+  border: 0;
+  line-height: 0;
+  border-radius: 10px;
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+.badge img { height: 48px; width: auto; display: block; }
+.badge:hover { transform: translateY(-1px); opacity: 0.9; }
+
+.terms-line {
+  font-size: 0.8125rem;
+  color: var(--tertiary);
+  margin: 0;
+  letter-spacing: 0.005em;
+}
+
+/* ========================== the hero instrument ========================== */
 /* Two lines: the wrist, and the tap just under it. This is the product. */
 
 .instrument {
   width: min(100%, 34rem);
-  margin: 0 auto clamp(1.25rem, 4vw, 2.5rem);
+  margin: 0 auto clamp(1.5rem, 4vw, 2.75rem);
   position: relative;
   aspect-ratio: 16 / 8;
-  max-height: min(34svh, 15rem);
+  max-height: min(34svh, 17rem);
 }
 
 .instrument svg { width: 100%; height: 100%; overflow: visible; }
@@ -236,8 +335,9 @@ li::marker { color: var(--tertiary); }
 .trace.tap {
   stroke: var(--accent);
   stroke-width: 2.5;
+  stroke-dasharray: 1400;
   animation-delay: 0.7s;
-  filter: drop-shadow(0 0 10px oklch(0.74 0.10 282 / 0.55));
+  filter: drop-shadow(0 0 10px oklch(0.74 0.10 282 / 0.5));
 }
 
 @keyframes draw { to { stroke-dashoffset: 0; } }
@@ -254,7 +354,7 @@ li::marker { color: var(--tertiary); }
 
 @keyframes fade-in { to { opacity: 1; } }
 
-/* The orb, sitting behind the trace, beating at the cadence. */
+/* The orb, behind the trace, beating at the cadence. */
 .orb {
   position: absolute;
   left: 50%;
@@ -277,7 +377,137 @@ li::marker { color: var(--tertiary); }
   100% { transform: translate(-50%, -50%) scale(0.84); opacity: 0.5; }
 }
 
-/* ============================ the phases ============================ */
+/* =============================== claims =============================== */
+
+.claims {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.claim {
+  background: var(--ground);
+  padding: 1.6rem 1.4rem;
+}
+
+.claim .big {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.claim p { margin: 0; font-size: 0.875rem; line-height: 1.5; }
+
+/* =============================== plates =============================== */
+/* A figure and the sentence that reads it. */
+
+.plate {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--raise), oklch(0.13 0.012 282));
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.plate img,
+.plate svg { display: block; width: 100%; height: auto; }
+
+.plate figcaption,
+.caption {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--tertiary);
+  margin: 1.1rem 0 0;
+  text-wrap: pretty;
+}
+
+figure { margin: 0; }
+
+/* The Nightprint sits on its own, centred, because it is the one object in
+   the app that is meant to be recognised across a room. */
+.print {
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+.print img { width: min(100%, 22rem); }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.35rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+  color: var(--tertiary);
+}
+.legend li { display: inline-flex; align-items: center; gap: 0.45rem; margin: 0; }
+.legend .key {
+  width: 22px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  flex: none;
+}
+.legend .key.solid { background: rgba(255, 255, 255, 0.8); }
+.legend .key.dashed {
+  background: none;
+  border-top: 3px dashed var(--accent);
+  height: 0;
+}
+.legend .key.square { width: 12px; height: 12px; border-radius: 3px; }
+.legend .key.outline { background: none; border: 1px solid var(--faint); }
+
+/* ================================ stats ================================ */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  background: var(--ground);
+  padding: 1.25rem 1.2rem;
+}
+
+.stat .num {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 590;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.stat .num .unit {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--secondary);
+  margin-left: 0.15em;
+}
+.stat .what {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--tertiary);
+  margin-top: 0.35rem;
+}
+
+/* =============================== phases =============================== */
 
 .phases { list-style: none; padding: 0; margin: 0; }
 
@@ -331,73 +561,247 @@ li::marker { color: var(--tertiary); }
   margin-bottom: 0.15rem;
 }
 
+.phase .when {
+  color: var(--tertiary);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  margin-left: 0.5rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+}
+
 .phase p { margin: 0; font-size: 0.9375rem; }
 
-/* ============================== cards ============================== */
+/* ================================ split ================================ */
+/* Prose beside a figure, one under the other until there is room. */
 
-.claims {
+.split {
   display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+@media (min-width: 56rem) {
+  .split { grid-template-columns: 1fr 1fr; }
+  .split.wider-figure { grid-template-columns: 0.85fr 1.15fr; }
+  .split .prose { max-width: 30rem; }
+}
+
+/* ================================ tiles ================================ */
+
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius);
   overflow: hidden;
-  margin: 1.5rem 0 0;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin-top: 1.5rem;
 }
 
-.claim {
+/* The columns are chosen so the last row is never half empty: three tiles or
+   six tiles both divide by three, and only the six ever sit two abreast. */
+@media (min-width: 40rem) { .tiles.six { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 58rem) { .tiles, .tiles.six { grid-template-columns: repeat(3, 1fr); } }
+
+.tile {
   background: var(--ground);
-  padding: 1.5rem 1.35rem;
+  padding: 1.5rem 1.4rem;
 }
 
-.claim .big {
+.tile h3 { margin: 0 0 0.3rem; font-size: 1rem; }
+.tile p { margin: 0; font-size: 0.875rem; line-height: 1.5; }
+
+.tile .glyph {
   display: block;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--primary);
-  margin-bottom: 0.3rem;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+.tile .glyph svg { display: block; width: 22px; height: 22px; }
+
+/* ================================ plans ================================ */
+
+.plans {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  margin-top: 1.75rem;
 }
 
-.claim p { margin: 0; font-size: 0.875rem; line-height: 1.5; }
+.plan {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1.35rem, 3vw, 1.85rem);
+  background: linear-gradient(180deg, oklch(0.155 0.012 282), #000);
+}
+.plan.pro {
+  border-color: oklch(0.74 0.10 282 / 0.35);
+  background: linear-gradient(180deg, oklch(0.20 0.030 282), #000 78%);
+}
 
-/* ============================= reveals ============================= */
+.plan .kind {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+  font-weight: 600;
+}
+.plan.pro .kind { color: var(--accent); }
+
+.plan .price {
+  display: block;
+  font-size: 1.625rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  color: var(--primary);
+  margin: 0.55rem 0 0.15rem;
+}
+.plan .price small {
+  font-size: 0.9375rem;
+  font-weight: 450;
+  letter-spacing: -0.01em;
+  color: var(--secondary);
+}
+.plan .aside { font-size: 0.8125rem; color: var(--tertiary); margin: 0 0 1.15rem; }
+
+.plan ul { list-style: none; padding: 0; margin: 0; font-size: 0.9375rem; }
+.plan li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.45;
+}
+.plan li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--faint);
+}
+.plan.pro li::before { background: var(--accent); }
+
+/* =============================== callout =============================== */
+
+.callout {
+  border-left: 2px solid oklch(0.74 0.10 282 / 0.45);
+  padding: 0.1rem 0 0.1rem 1.35rem;
+  margin: 2rem 0 0;
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  line-height: 1.45;
+  color: var(--primary);
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+/* ============================== questions ============================== */
+
+.qa { border-bottom: 1px solid var(--line); }
+.qa:first-child,
+h2 + .qa { border-top: 1px solid var(--line); }
+
+.qa summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.15rem 2.5rem 1.15rem 0;
+  position: relative;
+  font-weight: 550;
+  letter-spacing: -0.012em;
+  color: var(--primary);
+}
+.qa summary::-webkit-details-marker { display: none; }
+
+.qa summary::after {
+  content: "";
+  position: absolute;
+  right: 0.55rem;
+  top: 1.55rem;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--tertiary);
+  border-bottom: 1.5px solid var(--tertiary);
+  transform: rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+.qa[open] summary::after { transform: rotate(-135deg); }
+.qa summary:hover::after { border-color: var(--primary); }
+
+.qa .answer { padding: 0 0 1.35rem; font-size: 0.9375rem; }
+.qa .answer p:last-child { margin-bottom: 0; }
+
+/* =============================== last call =============================== */
+
+.closing {
+  text-align: center;
+  padding-block: clamp(5rem, 12vw, 8rem);
+}
+.closing h2 { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); }
+.closing .lede { margin: 0 auto 2rem; max-width: 30rem; }
+.closing .get-row { margin-bottom: 2.5rem; }
+
+/* ============================== reveals ============================== */
 
 /* Guarded by .js: if the script never runs, nothing is ever hidden. */
 .js .rise {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(20px);
   transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 .js .rise.seen { opacity: 1; transform: none; }
+.js .rise.seen.d1 { transition-delay: 0.08s; }
+.js .rise.seen.d2 { transition-delay: 0.16s; }
+.js .rise.seen.d3 { transition-delay: 0.24s; }
 
-/* ============================= footer ============================= */
+/* =============================== footer =============================== */
 
 footer {
   border-top: 1px solid var(--line);
-  padding: 2.5rem var(--gutter) 3.5rem;
+  padding: clamp(2.5rem, 6vw, 4rem) var(--gutter) 3.5rem;
 }
 
 .footer-inner {
-  max-width: var(--measure);
+  max-width: var(--wide);
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1.25rem;
+  display: grid;
+  gap: 2rem clamp(1.5rem, 5vw, 4rem);
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   font-size: 0.875rem;
   color: var(--tertiary);
 }
 
-footer a {
-  color: var(--secondary);
-  border-bottom: none;
+.footer-inner h2 {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-weight: 600;
+  margin: 0 0 0.85rem;
 }
-footer a:hover { color: var(--primary); }
-footer .spacer { flex: 1 1 2rem; }
 
-/* ============================ courtesies ============================ */
+.footer-inner ul { list-style: none; padding: 0; margin: 0; }
+.footer-inner li { margin-bottom: 0.5rem; }
+
+footer a { color: var(--secondary); border-bottom: none; }
+footer a:hover { color: var(--primary); }
+
+.colophon {
+  max-width: var(--wide);
+  margin: clamp(2rem, 5vw, 3rem) auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--faint);
+}
+.colophon .mark { display: inline-flex; align-items: center; gap: 0.5rem; }
+.colophon img { width: 18px; height: 18px; border-radius: 5px; }
+.colophon .spacer { flex: 1 1 2rem; }
+
+/* ============================= courtesies ============================= */
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -406,16 +810,19 @@ footer .spacer { flex: 1 1 2rem; }
   .trace { animation: none; stroke-dashoffset: 0; }
   .trace-label { animation: none; opacity: 1; }
   .js .rise { opacity: 1; transform: none; transition: none; }
+  .badge, .mast .get { transition: none; }
 }
 
-@media (max-width: 26rem) {
-  .mast nav { gap: 0.85rem; font-size: 0.8125rem; }
+@media (max-width: 30rem) {
+  .mast nav { gap: 0.85rem; font-size: 0.875rem; }
   .phase { padding-left: 2.5rem; }
+  .badge img { height: 44px; }
 }
 
-/* Only on the narrowest phones does the name give way to the mark alone. */
-@media (max-width: 21rem) {
+/* On a narrow phone the masthead keeps the mark, the button and one link. */
+@media (max-width: 25rem) {
   .mast .home span { display: none; }
+  .mast nav .drop { display: none; }
 }
 
 ::selection { background: oklch(0.74 0.10 282 / 0.35); color: #fff; }
@@ -426,5 +833,19 @@ footer .spacer { flex: 1 1 2rem; }
   border-radius: 3px;
 }
 
-/* A text page opens straight on its title; give it air under the masthead. */
-main > h1:first-child { margin-top: clamp(2rem, 6vw, 3.5rem); }
+/* A text page opens straight on its title; give it air under the masthead,
+   and keep its headings smaller than the ones the home page shouts with. */
+.page { padding: clamp(2.5rem, 7vw, 4rem) var(--gutter) clamp(4rem, 10vw, 7rem); }
+.page h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem); margin-bottom: 0.75rem; }
+.page h2 {
+  font-size: 1.125rem;
+  letter-spacing: -0.015em;
+  margin: 2.75rem 0 0.75rem;
+}
+.page h2:first-of-type { margin-top: 2.25rem; }
+
+@media print {
+  body::before, .mast, footer { display: none; }
+  body { background: #fff; color: #000; }
+  a { color: #000; }
+}

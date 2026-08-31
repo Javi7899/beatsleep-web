@@ -4,65 +4,179 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>BeatSleep — Support</title>
-<meta name="description" content="Get help with BeatSleep. Written by a person, answered by a person.">
+<meta name="description" content="Help with BeatSleep: the taps, the night, your data and the subscription. Written by a person, answered by a person.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://javi7899.github.io/beatsleep-web/support.html">
+<meta property="og:site_name" content="BeatSleep">
 <meta property="og:title" content="BeatSleep — Support">
-<meta property="og:description" content="Get help with BeatSleep. Written by a person, answered by a person.">
+<meta property="og:description" content="Help with BeatSleep: the taps, the night, your data and the subscription. Written by a person, answered by a person.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/mark.png">
+<meta property="og:url" content="https://javi7899.github.io/beatsleep-web/support.html">
+<meta property="og:image" content="https://javi7899.github.io/beatsleep-web/assets/mark.png">
+<meta property="og:locale" content="en">
+<meta property="og:locale:alternate" content="es_ES">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="assets/icon-180.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
-<link rel="alternate" hreflang="es" href="es/support.html">
+<link rel="alternate" hreflang="es" href="https://javi7899.github.io/beatsleep-web/es/support.html">
+<link rel="alternate" hreflang="en" href="https://javi7899.github.io/beatsleep-web/support.html">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
 <header class="mast">
-  <a class="home" href=""><img src="assets/mark.png" alt=""><span>BeatSleep</span></a>
+  <a class="home" href="./"><img src="assets/mark-120.png" alt=""><span>BeatSleep</span></a>
   <nav>
     <a href="privacy.html">Privacy</a>
     <a href="support.html" aria-current="page">Support</a>
-    <a href="es/support.html">Español</a>
+    <a href="es/support.html" hreflang="es" lang="es">Español</a>
+    <a class="get" href="https://apps.apple.com/app/id6805001777">Get it</a>
   </nav>
 </header>
+<main id="main" class="page narrow">
+<h1>Support</h1>
+<p class="lede">One person makes BeatSleep, and that same person answers the email. Write in English or Spanish, and say what watch and what iOS version you are on.</p>
+<p class="mail"><a href="mailto:beatsleepf@gmail.com">beatsleepf@gmail.com</a></p>
 
-<main>
-  <h1>Support</h1>
-  <p class="lede" style="margin-left:0">One person makes BeatSleep, and that same person answers the email. Write in English or Spanish.</p>
-  <p class="mail"><a href="mailto:beatsleepf@gmail.com">beatsleepf@gmail.com</a></p>
+<h2>Getting started</h2>
 
-  <h2>Common questions</h2>
+<details class="qa">
+  <summary>I don't feel any taps.</summary>
+  <div class="answer">
+    <p>The first 45 seconds are silent on purpose — BeatSleep is measuring your resting rate before it leads. If nothing happens after that, check that Taptic strength is not on Faint (Protocol › Taptic strength), and that your band is snug: a loose band both dulls the tap and stops the heart-rate sensor reading.</p>
+  </div>
+</details>
 
-  <h3>I don't feel any taps.</h3>
-  <p>The first 45 seconds are silent on purpose — BeatSleep is measuring your resting rate before it leads. If nothing happens after that, check that Taptic strength is not on Faint (Protocol › Taptic strength), and that your band is snug: a loose band both dulls the tap and stops the heart-rate sensor reading.</p>
+<details class="qa">
+  <summary>It says it can't read my heart rate.</summary>
+  <div class="answer">
+    <p>BeatSleep needs the Health permission for heart rate. Grant it in Settings › Privacy &amp; Security › Health › BeatSleep on your iPhone, or in the Watch app. Without it a session cannot start — the whole app is built on your live pulse.</p>
+  </div>
+</details>
 
-  <h3>It says it can't read my heart rate.</h3>
-  <p>BeatSleep needs the Health permission for heart rate. Grant it in Settings › Privacy &amp; Security › Health › BeatSleep on your iPhone, or in the Watch app. Without it a session cannot start — the whole app is built on your live pulse.</p>
+<details class="qa">
+  <summary>The Sleep tab is empty.</summary>
+  <div class="answer">
+    <p>That tab is read from Apple Health on the iPhone, so it needs the sleep permissions as well as heart rate: Settings › Privacy &amp; Security › Health › BeatSleep, and turn everything on. If Health itself has no nights in it — because sleep tracking on the watch has never been switched on — there is nothing for BeatSleep to read yet.</p>
+  </div>
+</details>
 
-  <h3>Does it make a sound?</h3>
-  <p>Never. Not to start, not to lead, not to wake you. Waking is a quickening of the taps, not an alarm.</p>
+<details class="qa">
+  <summary>Do I need to keep the app open?</summary>
+  <div class="answer">
+    <p>No. Begin the night on the watch and put your wrist down. The screen fades on its own, and the session goes on leading with the screen dark.</p>
+  </div>
+</details>
 
-  <h3>How do I get my data out?</h3>
-  <p>Protocol › Export my nights writes everything BeatSleep holds to a JSON file you can keep or inspect. Protocol › Erase everything deletes it permanently. Deleting the app also deletes everything it stored.</p>
+<h2>The night itself</h2>
 
-  <h3>Managing your subscription</h3>
-  <p>BeatSleep Pro is billed through your Apple Account. To view, change or cancel it, open Settings on your iPhone, tap your name, then Subscriptions. Cancelling there stops the renewal; Pro stays active until the end of the period you already paid for. Refunds are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> — not by us, because we never take the payment.</p>
+<details class="qa">
+  <summary>Does it make a sound?</summary>
+  <div class="answer">
+    <p>Never. Not to start, not to lead, not to wake you. Apple&nbsp;Watch gives an app no volume for haptics, only a choice of taps, and most of them carry a tone through the speaker — BeatSleep uses the one that does not. Waking is a quickening of the taps, not an alarm.</p>
+  </div>
+</details>
 
-  <h3>Something is wrong, or something is missing.</h3>
-  <p>Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol.</p>
+<details class="qa">
+  <summary>The session ended before morning.</summary>
+  <div class="answer">
+    <p>That is the failsafe, and it is on by default: five minutes after your pulse has settled at the target, the night closes itself, because by then the taps have nothing left to do. If you want it to run longer, Protocol › How the night ends offers a hard ceiling of your choosing, or the whole night with a taptic quickening inside your wake window.</p>
+  </div>
+</details>
+
+<details class="qa">
+  <summary>It keeps re-anchoring and the cadence goes back up.</summary>
+  <div class="answer">
+    <p>That is it following you. If your pulse climbs — you turned over, something woke you — BeatSleep stops pulling and re-anchors to your real heartbeat within a minute, rather than leading at a rate you are no longer near. Restlessness is followed, not fought.</p>
+  </div>
+</details>
+
+<details class="qa">
+  <summary>How much battery does a night cost?</summary>
+  <div class="answer">
+    <p>A session that closes itself is usually a quarter of an hour of watch time, which is very little. The whole-night mode keeps a workout session open until morning, and costs what any all-night tracking costs — expect to charge in the morning if you use it.</p>
+  </div>
+</details>
+
+<h2>Your data</h2>
+
+<details class="qa">
+  <summary>How do I get my data out?</summary>
+  <div class="answer">
+    <p>Protocol › Export my nights writes everything BeatSleep holds to a JSON file you can keep or inspect. Protocol › Erase everything deletes it permanently, on the device and in iCloud. Deleting the app also deletes everything it stored.</p>
+  </div>
+</details>
+
+<details class="qa">
+  <summary>Where do my nights go?</summary>
+  <div class="answer">
+    <p>Nowhere. There is no account and no server. They stay on your devices, and move between your watch and your phone over Apple's encrypted device link. If you turn on iCloud sync they also go to <strong>your own</strong> private iCloud database, in encrypted fields; turning it off deletes them from there again. The <a href="privacy.html">privacy policy</a> has the whole of it.</p>
+  </div>
+</details>
+
+<h2>BeatSleep Pro</h2>
+
+<details class="qa">
+  <summary>Managing your subscription</summary>
+  <div class="answer">
+    <p>BeatSleep Pro is billed through your Apple Account. To view, change or cancel it, open Settings on your iPhone, tap your name, then Subscriptions. Cancelling there stops the renewal; Pro stays active until the end of the period you already paid for. Refunds are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> — not by us, because we never take the payment.</p>
+  </div>
+</details>
+
+<details class="qa">
+  <summary>I paid, and Pro is not on.</summary>
+  <div class="answer">
+    <p>Protocol › Restore purchases asks StoreKit again. Make sure the iPhone is signed in to the same Apple Account that bought it — a subscription belongs to an Apple Account, not to a device.</p>
+  </div>
+</details>
+
+<details class="qa">
+  <summary>I have a promotional code.</summary>
+  <div class="answer">
+    <p>Protocol › Redeem a code. A code granting Pro is a gift rather than a purchase: it carries no cash value and does not renew.</p>
+  </div>
+</details>
+
+<h2>Something is wrong, or something is missing</h2>
+<p>Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol — it opens a message with nothing filled in but the version number.</p>
 </main>
-
 <footer>
   <div class="footer-inner">
-    <a href="">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="support.html">Support</a>
-    <a href="terms.html">Terms</a>
+    <div>
+      <h2>BeatSleep</h2>
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="https://apps.apple.com/app/id6805001777">On the App Store</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Legal</h2>
+      <ul>
+        <li><a href="privacy.html">Privacy policy</a></li>
+        <li><a href="terms.html">Terms of use</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Language</h2>
+      <ul>
+        <li><a href="es/support.html" hreflang="es" lang="es">Español</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Write to me</h2>
+      <ul>
+        <li><a href="mailto:beatsleepf@gmail.com">beatsleepf@gmail.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon">
+    <span class="mark"><img src="assets/mark-120.png" alt="">© 2026 Javier Torres Rubio</span>
     <span class="spacer"></span>
-    <span>&copy; 2026 Javier Torres Rubio</span>
+    <span>This site has no cookies, no analytics and no third-party requests.</span>
   </div>
 </footer>
 </div>
