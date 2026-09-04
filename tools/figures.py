@@ -267,6 +267,51 @@ def descent(path, w=760, h=230):
 '''
     open(path, "w").write(svg)
 
+# ------------------------------------------------------------------ record --
+
+# Three weeks of "how long it took to go under", in minutes. Made up, and
+# shaped like a record that is slowly improving without ever being tidy.
+UNDER = [23,19,26,17,21,14,16,22,13,18,11,15,20,12,14,9,13,16,10,12,8]
+
+def record(path, w=760, h=230):
+    """The record of how long each night took to go under, with your median.
+
+    The same figure the app draws in its history sheet: one bar a night, and
+    one dashed line at the median, which is the number the eye should land on.
+    The bars are a gradient down into the ground the way the app's are."""
+    left, right, top, bot = 34, w - 8, 26, h - 26
+    hi = 28.0
+    n = len(UNDER)
+    slot = (right - left) / n
+    bw = slot * 0.56
+    def Y(m): return top + (bot - top) * (1 - m / hi)
+
+    bars = []
+    for i, m in enumerate(UNDER):
+        x = left + i * slot + (slot - bw) / 2
+        y = Y(m)
+        bars.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="3" fill="url(#bar)"/>'
+                    % (x, y, bw, bot - y))
+
+    med = sorted(UNDER)[n // 2]
+    my = Y(med)
+    rails = "".join('<line x1="%d" y1="%.1f" x2="%d" y2="%.1f" stroke="%s" stroke-width="1"/>'
+                    % (left, Y(m), right, Y(m), wash(0.05)) for m in (10, 20))
+    ticks = "".join('<text x="%d" y="%.1f" fill="%s" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif" text-anchor="end">%dm</text>'
+                    % (left - 8, Y(m) + 3.5, wash(0.38), m) for m in (10, 20))
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Three weeks of nights as bars: how many minutes each one took to go under, falling slowly, with a dashed line across them at the median.">
+  <defs><linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="{ACCENT_L}"/><stop offset="1" stop-color="{oklch(0.44, 0.08, HUE, 0.5)}"/>
+  </linearGradient></defs>
+  {rails}
+  {''.join(bars)}
+  <line x1="{left}" y1="{my:.1f}" x2="{right}" y2="{my:.1f}" stroke="{wash(0.32)}" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="{left + 4}" y="{my - 7:.1f}" fill="{wash(0.5)}" font-size="10" font-family="ui-sans-serif,system-ui,sans-serif">median {med} min</text>
+  {ticks}
+</svg>
+'''
+    open(path, "w").write(svg)
+
 # --------------------------------------------------------------------- run ---
 
 if __name__ == "__main__":
@@ -276,5 +321,6 @@ if __name__ == "__main__":
     nightprint(os.path.join(here, "nightprint-small.svg"), size=300, rim=134, hub=38, pulse=False)
     hypnogram(os.path.join(here, "hypnogram.svg"))
     weeks(os.path.join(here, "weeks.svg"))
+    record(os.path.join(here, "record.svg"))
     descent(os.path.join(here, "descent.svg"))
     print("wrote", os.path.abspath(here))
