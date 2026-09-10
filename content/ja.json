@@ -198,7 +198,7 @@
   "One person makes BeatSleep, and that same person answers the email. Write in English or Spanish, and say what watch and what iOS version you are on.": "BeatSleepを作っているのは1人で、メールに答えるのも同じ人です。英語かスペイン語で、どのWatchとどのiOSバージョンをお使いかを書いてください。",
   "Getting started": "はじめに",
   "I don't feel any vibration.": "振動がまったく感じられません。",
-  "The first 45 seconds are silent on purpose: BeatSleep is measuring your resting rate before it leads. If nothing happens after that, check that Vibration strength is not on Faint (Protocol › Vibration strength), and that your band is snug: a loose band both dulls the vibration and stops the heart-rate sensor reading.": "最初の45秒は意図的に無音です。導く前に安静時心拍数を測っています。そのあとも何も起きない場合は、振動の強さが「かすか」になっていないか（プロトコル›振動の強さ）、バンドがぴったり締まっているかを確認してください。緩いバンドは振動を鈍らせ、心拍センサーの読み取りも妨げます。",
+  "The first 45 seconds are silent on purpose: BeatSleep is measuring your resting rate before it leads. If nothing happens after that, try Firm rather than Gentle under The vibration, and check that your band is snug: a loose band both dulls the vibration and stops the heart-rate sensor reading.": "最初の45秒は意図的に無音です。導く前に安静時心拍数を測っています。そのあとも何も起きない場合は、「振動」で「やさしい」ではなく「しっかり」を試し、バンドがぴったり締まっているかを確認してください。緩いバンドは振動を鈍らせ、心拍センサーの読み取りも妨げます。",
   "It says it can't read my heart rate.": "心拍数を読み取れないと表示されます。",
   "BeatSleep needs the Health permission for heart rate. Grant it in Settings › Privacy &amp; Security › Health › BeatSleep on your iPhone, or in the Watch app. Without it a session cannot start: the whole app is built on your live pulse.": "BeatSleepには心拍数に関するヘルスケアの許可が必要です。iPhoneの「設定」›「プライバシーとセキュリティ」›「ヘルスケア」›「BeatSleep」、またはWatchアプリで許可してください。許可がないとセッションを開始できません。アプリ全体がリアルタイムの脈拍の上に成り立っています。",
   "The Sleep tab is empty.": "「睡眠」タブが空です。",
