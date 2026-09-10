@@ -151,6 +151,64 @@ body::before {
 .mast nav a:hover { color: var(--primary); }
 .mast nav a[aria-current] { color: var(--primary); }
 
+/* The language menu.
+   Two languages were a link. Seven are a list, and a list in a masthead is a
+   menu. It is a <details>, so it opens with no script at all and it closes
+   itself on Escape: the site has two behaviours in app.js and this is not
+   going to be the third. */
+.mast .lang {
+  position: relative;
+  font-size: inherit;
+}
+.mast .lang > summary {
+  color: var(--secondary);
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+  padding-block: 0.65rem;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.25s var(--ease);
+}
+.mast .lang > summary::-webkit-details-marker { display: none; }
+.mast .lang > summary::after {
+  content: "";
+  display: inline-block;
+  width: 0.36em;
+  height: 0.36em;
+  margin-left: 0.45em;
+  vertical-align: 0.14em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-0.06em, -0.06em);
+  transition: transform 0.25s var(--ease);
+}
+.mast .lang[open] > summary::after { transform: rotate(-135deg) translate(-0.1em, -0.1em); }
+.mast .lang > summary:hover,
+.mast .lang[open] > summary { color: var(--primary); }
+
+.mast .lang > ul {
+  position: absolute;
+  top: calc(100% - 0.35rem);
+  right: 0;
+  z-index: 40;
+  margin: 0;
+  padding: 0.35rem 0;
+  list-style: none;
+  min-width: 9.5rem;
+  border-radius: 12px;
+  background: rgba(18, 18, 20, 0.92);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+  backdrop-filter: saturate(140%) blur(18px);
+  -webkit-backdrop-filter: saturate(140%) blur(18px);
+}
+.mast .lang > ul a {
+  display: block;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.9375rem;
+}
+.mast .lang > ul a:hover { color: var(--primary); }
+
 /* The masthead's own call to action, which only appears once the hero's has
    been scrolled past, because two of them on screen at once is one too many. */
 .mast .get {
