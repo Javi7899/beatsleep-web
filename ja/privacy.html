@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>BeatSleep: Privacy Policy</title>
-<meta name="description" content="BeatSleep collects nothing. No account, no server, no analytics: what it reads stays on your own devices.">
+<title>BeatSleep：プライバシーポリシー</title>
+<meta name="description" content="BeatSleepは何も収集しません。アカウントもサーバーも解析もなく、読み取ったものは自分の端末に留まります。">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#000000">
 <link rel="canonical" href="https://javi7899.github.io/beatsleep-web/ja/privacy.html">
 <meta property="og:site_name" content="BeatSleep">
-<meta property="og:title" content="BeatSleep: Privacy Policy">
-<meta property="og:description" content="BeatSleep collects nothing. No account, no server, no analytics: what it reads stays on your own devices.">
+<meta property="og:title" content="BeatSleep：プライバシーポリシー">
+<meta property="og:description" content="BeatSleepは何も収集しません。アカウントもサーバーも解析もなく、読み取ったものは自分の端末に留まります。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://javi7899.github.io/beatsleep-web/ja/privacy.html">
 <meta property="og:image" content="https://javi7899.github.io/beatsleep-web/assets/mark.png">
@@ -58,65 +58,65 @@
   </nav>
 </header>
 <main id="main" class="page narrow">
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: 30 August 2026</p>
+<h1>プライバシーポリシー</h1>
+<p class="updated">最終更新：2026年8月30日</p>
 
-<p>BeatSleep does not collect your data. This is not a promise about how carefully a database is guarded: there is no database, and there is no server. Nothing you record is ever sent to the developer, and there is no mechanism by which it could be.</p>
+<p>BeatSleepはあなたのデータを収集しません。これはデータベースをどれだけ厳重に守るかという約束ではありません。データベースがそもそもなく、サーバーもありません。あなたが記録したものが開発者へ送られることはなく、送られうる仕組み自体が存在しません。</p>
 
-<h2>What BeatSleep reads</h2>
-<p>All of the following is read from HealthKit, on your own devices, and used only to run the session and to describe your nights back to you:</p>
+<h2>BeatSleepが読み取るもの</h2>
+<p>以下はすべて、自分の端末上のHealthKitから読み取られ、セッションを動かすことと、あなたの夜をあなたに説明することにのみ使われます。</p>
 <ul>
-  <li><strong>Heart rate</strong>, on the Apple&nbsp;Watch while a session is running, to decide the vibration cadence and to compute the summary you see in the morning.</li>
-  <li><strong>Sleep stages, heart-rate variability, respiratory rate, resting heart rate, wrist temperature and blood oxygen</strong>, on the iPhone, to show you your nights, including the nights from before you installed BeatSleep, and the hours after a session has closed itself.</li>
-  <li>Your own sleeping minimum, once, to set the lowest rate the descent will ever lead you to, instead of guessing at a number for you.</li>
+  <li><strong>心拍数</strong>。セッション中のApple&nbsp;Watchで読み取り、振動のリズムを決め、朝に見る要約を計算するために使います。</li>
+  <li><strong>睡眠段階、心拍変動、呼吸数、安静時心拍数、手首の温度、血中酸素</strong>。iPhoneで読み取り、BeatSleepを入れる前の夜や、セッションが閉じたあとの時間も含めて、あなたの夜をお見せするために使います。</li>
+  <li>あなた自身の睡眠中の最低値を一度だけ。下降が導く最も低い心拍数を、勝手に数字を決めるのではなく、そこから設定するためです。</li>
 </ul>
-<p>Health data is never used for advertising, never sold, never shared, and never used for any purpose other than showing you your own night inside the app.</p>
+<p>ヘルスケアのデータが広告に使われることも、売られることも、共有されることもありません。アプリの中であなた自身の夜をお見せする以外の目的に使うこともありません。</p>
 
-<h2>What BeatSleep writes</h2>
+<h2>BeatSleepが書き込むもの</h2>
 <ul>
-  <li><strong>Mindful minutes</strong>, into your own Health app, covering the stretch of the night you were being led. Nothing else is written to Health.</li>
-</ul>
-
-<h2>Where it is kept</h2>
-<p>Every night BeatSleep records is stored in a file inside the app's own container on your device, protected by iOS file encryption while your device is locked. Summaries move between your Apple&nbsp;Watch and your iPhone over Apple's encrypted device-to-device link, which never leaves the pair.</p>
-
-<h2>iCloud sync, optional and off by default</h2>
-<p>BeatSleep can carry your history between your own devices. This is <strong>off unless you turn it on</strong>, and it is not our network:</p>
-<ul>
-  <li>Records are written to the <strong>private database of your own iCloud account</strong>, using CloudKit.</li>
-  <li>Every field is written through CloudKit's encrypted values, so the payload is encrypted with a key held for you and never for us.</li>
-  <li>The developer has no account system, no server, and no access of any kind to that database. We cannot read it, list it, or know it exists.</li>
-  <li>Turning the switch off <strong>deletes</strong> those records from iCloud, rather than merely ignoring them.</li>
-</ul>
-<p>Apple's handling of your iCloud data is governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
-
-<h2>Subscriptions</h2>
-<p>BeatSleep Pro is sold and billed by Apple through your Apple Account. The app asks Apple's StoreKit whether this Apple Account is entitled to Pro, and that answer stays on the device. We never see your name, your email, your payment method or your Apple Account. Apple provides the developer only with anonymous, aggregated sales reports, which cannot identify you.</p>
-
-<h2>What is not done</h2>
-<ul>
-  <li>No account, no sign-in, no email address.</li>
-  <li>No analytics, no crash reporting SDKs, no advertising identifiers, no tracking of any kind.</li>
-  <li>No third-party SDKs.</li>
-  <li>No data is sold or shared with anyone.</li>
+  <li><strong>マインドフルネスの時間</strong>を、導かれていた夜の区間ぶん、ご自身のヘルスケアに書き込みます。それ以外はヘルスケアに書き込みません。</li>
 </ul>
 
-<h2>Your control</h2>
+<h2>どこに保管されるか</h2>
+<p>BeatSleepが記録するすべての夜は、端末上のアプリ専用コンテナ内のファイルに保存され、端末がロックされているあいだはiOSのファイル暗号化で保護されます。要約はApple&nbsp;WatchとiPhoneのあいだを、Appleの暗号化された端末間リンクで移動し、その2台から外へ出ることはありません。</p>
+
+<h2>iCloud同期は任意で、初期状態では切</h2>
+<p>BeatSleepは自分の端末のあいだで記録を持ち運べます。これは<strong>自分で入にするまで切</strong>で、私たちのネットワークではありません。</p>
 <ul>
-  <li><strong>Export.</strong> "Export my nights" writes everything BeatSleep holds to a JSON file you can keep or inspect.</li>
-  <li><strong>Erase.</strong> "Erase everything" deletes all recorded nights permanently, on the device and in iCloud.</li>
-  <li><strong>Revoke.</strong> You can withdraw Health permissions at any time in Settings › Privacy &amp; Security › Health › BeatSleep.</li>
-  <li><strong>Delete the app.</strong> Deleting BeatSleep deletes everything it stored. Mindful minutes already written to Health belong to your Health app, and are removed there, if you wish, from Health itself.</li>
+  <li>レコードはCloudKitを使って、<strong>ご自身のiCloudアカウントのプライベートデータベース</strong>に書き込まれます。</li>
+  <li>すべてのフィールドはCloudKitの暗号化された値として書き込まれるため、中身はあなたのために保持される鍵で暗号化され、私たちのための鍵は存在しません。</li>
+  <li>開発者にはアカウントの仕組みもサーバーもなく、そのデータベースへのいかなるアクセス権もありません。読むことも、一覧することも、存在を知ることもできません。</li>
+  <li>スイッチを切にすると、それらのレコードは無視されるのではなくiCloudから<strong>削除</strong>されます。</li>
 </ul>
-<p>Because no personal data ever reaches the developer, there is nothing for us to hand over, correct or delete on request under the GDPR: the export and erase controls above are entirely in your hands, and they are complete.</p>
+<p>AppleによるiCloudデータの取り扱いは<a href="https://www.apple.com/legal/privacy/">Appleのプライバシーポリシー</a>に従います。</p>
 
-<h2>Children</h2>
-<p>BeatSleep is not directed at children and collects nothing from anyone.</p>
+<h2>サブスクリプション</h2>
+<p>BeatSleep Proは、あなたのAppleアカウントを通じてAppleが販売し請求します。アプリはAppleのStoreKitに、このAppleアカウントにProの権利があるかどうかを尋ね、その答えは端末に留まります。私たちがあなたの氏名、メールアドレス、支払い方法、Appleアカウントを見ることはありません。Appleが開発者に提供するのは、匿名で集計された販売レポートだけで、そこからあなたを特定することはできません。</p>
 
-<h2>Changes</h2>
-<p>If this policy changes, the date at the top changes with it, and the previous versions remain in the public history of the repository this page is served from.</p>
+<h2>行わないこと</h2>
+<ul>
+  <li>アカウントもログインもメールアドレスもありません。</li>
+  <li>解析も、クラッシュ報告のSDKも、広告用の識別子も、いかなる追跡もありません。</li>
+  <li>第三者のSDKはありません。</li>
+  <li>データを売ることも、誰かと共有することもありません。</li>
+</ul>
 
-<h2>Contact</h2>
+<h2>あなたができること</h2>
+<ul>
+  <li><strong>書き出し。</strong>「自分の夜を書き出す」で、BeatSleepが持つすべてを、保存も確認もできるJSONファイルに書き出します。</li>
+  <li><strong>消去。</strong>「すべて消去」で、記録したすべての夜を端末からもiCloudからも完全に削除します。</li>
+  <li><strong>取り消し。</strong>ヘルスケアの許可は「設定」›「プライバシーとセキュリティ」›「ヘルスケア」›「BeatSleep」でいつでも取り消せます。</li>
+  <li><strong>アプリの削除。</strong>BeatSleepを削除すると、保存していたものはすべて消えます。すでにヘルスケアへ書き込まれたマインドフルネスの時間はご自身のヘルスケアのもので、必要ならヘルスケア側から削除できます。</li>
+</ul>
+<p>個人データが開発者に届くことは一切ないため、GDPRに基づく請求に対して私たちが引き渡し、訂正、削除できるものは存在しません。上の書き出しと消去の操作は完全にあなたの手の中にあり、それで全部です。</p>
+
+<h2>子どもについて</h2>
+<p>BeatSleepは子どもを対象としておらず、誰からも何も収集しません。</p>
+
+<h2>変更</h2>
+<p>このポリシーが変わるときは上部の日付も一緒に変わり、以前の版はこのページを配信しているリポジトリの公開履歴に残ります。</p>
+
+<h2>連絡先</h2>
 <p class="mail"><a href="mailto:beatsleepf@gmail.com">beatsleepf@gmail.com</a></p>
 </main>
 <footer>
@@ -124,7 +124,7 @@
     <div>
       <h2>BeatSleep</h2>
       <ul>
-        <li><a href="./">Home</a></li>
+        <li><a href="./">ホーム</a></li>
         <li><a href="https://apps.apple.com/app/id6805001777">App Storeで</a></li>
         <li><a href="support.html">サポート</a></li>
       </ul>

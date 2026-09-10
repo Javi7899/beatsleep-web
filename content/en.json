@@ -7,7 +7,6 @@
   "How it works": "How it works",
   "Privacy": "Privacy",
   "Support": "Support",
-  "Español": "Español",
   "Get it": "Get it",
   "Two lines descending together: the wearer's heart rate, and the vibration cadence held just below it.": "Two lines descending together: the wearer's heart rate, and the vibration cadence held just below it.",
   "your pulse": "your pulse",
@@ -150,7 +149,6 @@
   "<a href=\"privacy.html\">Privacy policy</a>": "<a href=\"privacy.html\">Privacy policy</a>",
   "<a href=\"terms.html\">Terms of use</a>": "<a href=\"terms.html\">Terms of use</a>",
   "Language": "Language",
-  "<a href=\"es/\" hreflang=\"es\" lang=\"es\">Español</a>": "<a href=\"es/\" hreflang=\"es\" lang=\"es\">Español</a>",
   "Write to me": "Write to me",
   "<a href=\"mailto:beatsleepf@gmail.com\">beatsleepf@gmail.com</a>": "<a href=\"mailto:beatsleepf@gmail.com\">beatsleepf@gmail.com</a>",
   "This site has no cookies, no analytics and no third-party requests.": "This site has no cookies, no analytics and no third-party requests.",
@@ -195,7 +193,6 @@
   "If this policy changes, the date at the top changes with it, and the previous versions remain in the public history of the repository this page is served from.": "If this policy changes, the date at the top changes with it, and the previous versions remain in the public history of the repository this page is served from.",
   "Contact": "Contact",
   "<a href=\"./\">Home</a>": "<a href=\"./\">Home</a>",
-  "<a href=\"es/privacy.html\" hreflang=\"es\" lang=\"es\">Español</a>": "<a href=\"es/privacy.html\" hreflang=\"es\" lang=\"es\">Español</a>",
   "BeatSleep: Support": "BeatSleep: Support",
   "Help with BeatSleep: the vibration, the night, your data and the subscription. Written by a person, answered by a person.": "Help with BeatSleep: the vibration, the night, your data and the subscription. Written by a person, answered by a person.",
   "One person makes BeatSleep, and that same person answers the email. Write in English or Spanish, and say what watch and what iOS version you are on.": "One person makes BeatSleep, and that same person answers the email. Write in English or Spanish, and say what watch and what iOS version you are on.",
@@ -234,7 +231,6 @@
   "Protocol › Redeem a code. A code granting Pro is a gift rather than a purchase: it carries no cash value and does not renew.": "Protocol › Redeem a code. A code granting Pro is a gift rather than a purchase: it carries no cash value and does not renew.",
   "Something is wrong, or something is missing": "Something is wrong, or something is missing",
   "Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol: it opens a message with nothing filled in but the version number.": "Email the address above. Tell me what watch and what iOS version you are on, and what you expected to happen. You can also propose an improvement from inside the app, under Protocol: it opens a message with nothing filled in but the version number.",
-  "<a href=\"es/support.html\" hreflang=\"es\" lang=\"es\">Español</a>": "<a href=\"es/support.html\" hreflang=\"es\" lang=\"es\">Español</a>",
   "BeatSleep: Terms of Use": "BeatSleep: Terms of Use",
   "The terms of use for BeatSleep and BeatSleep Pro.": "The terms of use for BeatSleep and BeatSleep Pro.",
   "Terms of Use": "Terms of Use",
@@ -253,6 +249,5 @@
   "No warranty": "No warranty",
   "BeatSleep is provided as is. It cannot guarantee that you will fall asleep, that you will sleep better, or that any measurement it shows is clinically accurate. To the extent permitted by law, the developer is not liable for any loss arising from your use of the app. Nothing in these terms limits any right you have as a consumer under Spanish or EU law that cannot be limited by agreement.": "BeatSleep is provided as is. It cannot guarantee that you will fall asleep, that you will sleep better, or that any measurement it shows is clinically accurate. To the extent permitted by law, the developer is not liable for any loss arising from your use of the app. Nothing in these terms limits any right you have as a consumer under Spanish or EU law that cannot be limited by agreement.",
   "Governing law": "Governing law",
-  "These terms are governed by the law of Spain.": "These terms are governed by the law of Spain.",
-  "<a href=\"es/terms.html\" hreflang=\"es\" lang=\"es\">Español</a>": "<a href=\"es/terms.html\" hreflang=\"es\" lang=\"es\">Español</a>"
+  "These terms are governed by the law of Spain.": "These terms are governed by the law of Spain."
 }
